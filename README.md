@@ -30,7 +30,11 @@
 <img src="http://i.imgur.com/dOqR0dz.png" alt="Start Screen"/> <img src="http://i.imgur.com/hpOmAXg.png" alt="Start Screen"/> 
 #User мод
 <img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/YFhlgJi.png" alt="Start Screen"/>
+#Admin мод
+<img src="http://i.imgur.com/uFnqyhV.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/rFTKMmG.png" alt="Start Screen"/>
+<img src="" alt="Start Screen"/>
 
 * * *
 <b>1.1.	Евиденција на набавената опрема</b>
