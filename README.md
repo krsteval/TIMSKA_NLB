@@ -28,6 +28,9 @@
    
    Додека Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
 <img src="http://i.imgur.com/dOqR0dz.png" alt="Start Screen"/> <img src="http://i.imgur.com/hpOmAXg.png" alt="Start Screen"/> 
+#User мод
+<img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
 
 * * *
 <b>1.1.	Евиденција на набавената опрема</b>
