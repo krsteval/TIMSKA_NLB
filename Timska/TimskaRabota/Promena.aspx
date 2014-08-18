@@ -141,29 +141,27 @@
                     <div style="float:left">
                                 <asp:Label ID="lblmessage" runat="server"></asp:Label>
                                 <asp:Label ID="lblTipOprema" runat="server">Тип на Опрема</asp:Label>
-                                <asp:TextBox ID="txtTipOprema" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTipOprema" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblProizvoditel" runat="server">Производител</asp:Label>
-                                <asp:TextBox ID="txtProizvoditel" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtProizvoditel" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblModel" runat="server">Модел</asp:Label>
-                                <asp:TextBox ID="txtModel" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtModel" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojProdukt" runat="server">Број на продукт</asp:Label>
-                                <asp:TextBox ID="txtBrojProdukt1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBrojProdukt1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblSeriskiBroj" runat="server">Сериски Број</asp:Label>
-                                <asp:TextBox ID="txtSeriskiBroj1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtSeriskiBroj1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblPartNo" runat="server">Part Number</asp:Label>
-                                <asp:TextBox ID="txtPartNo1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtPartNo1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblInventarenBroj" runat="server">Инвентарен Број</asp:Label>
-                                <asp:TextBox ID="txtInventarenBroj1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtInventarenBroj1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblDobavuvac" runat="server">Добавувач</asp:Label>
-                                <asp:TextBox ID="txtDobavuvac" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDobavuvac" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblNabavnaCena" runat="server">Набавна Цена</asp:Label>
-                                <asp:TextBox ID="txtNabavnaCena1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtNabavnaCena1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaFaktura" runat="server">Број на фактура</asp:Label>
-                                <asp:TextBox ID="txtBrojNaFaktura1" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblDatumNaVnes1" runat="server">Датум на внес</asp:Label>
-                                <asp:TextBox ID="txtDatumNaVnes" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBrojNaFaktura1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblDatumNaFaktura1" runat="server">Датум на фактура</asp:Label>
-                                <asp:TextBox ID="txtDatumNaFaktura" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDatumNaFaktura" runat="server" ReadOnly="True"></asp:TextBox>
                         </div>
                         <div style="float:right">
                                 
@@ -180,18 +178,19 @@
                                 <asp:Label ID="lblSektor" runat="server">Сектор</asp:Label>
                                 <asp:TextBox ID="txtSektor" runat="server"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaBaranje" runat="server">Број на барање</asp:Label>
-                                <asp:TextBox ID="txtBrojNaBaranje1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBrojNaBaranje1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaNalog" runat="server">Број на налог</asp:Label>
-                                <asp:TextBox ID="txtBrojNaNalog1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBrojNaNalog1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblGaranciskiRok" runat="server">Гаранциски Рок</asp:Label>
-                                <asp:TextBox ID="txtGaranciskiRok1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtGaranciskiRok1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojCheckLista" runat="server">Број на Check листа</asp:Label>
-                                <asp:TextBox ID="txtBrojCheckLista1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBrojCheckLista1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblZabeleska" runat="server">Забелешка</asp:Label>
                                 <asp:TextBox ID="txtZabeleska1" runat="server"></asp:TextBox>
                         </div>    
                 </p>
                 <div>
+                    <asp:Label ID="lblPomosnaID" runat="server" Text=" " style="margin-top:-20px;position:absolute;color:transparent;" Font-Size="XX-Small" ></asp:Label>
                     <asp:Button ID="Zacuvaj"  class="btn btn-success" runat="server" Text="Зачувај" OnClick="Button2_Click1" />
                 </div>            
             </div>
@@ -351,11 +350,10 @@
                                             BorderStyle="None" BorderWidth="1px" style="margin-right: 7px" 
                                             Width="1200px" onrowcancelingedit="gvPromena_RowCancelingEdit" 
                                             onrowediting="gvPromena_RowEditing" onrowupdating="gvPromena_RowUpdating" 
-                                            AllowSorting="True" onrowcommand="gvPromena_RowCommand" onsorting="gvPromena_Sorting" 
-                                           >
+                                            AllowSorting="True" onrowcommand="gvPromena_RowCommand" onsorting="gvPromena_Sorting" >
                                     <AlternatingRowStyle BackColor="#F7F7F7" />
                                     <Columns>
-                                        <asp:BoundField HeaderText="ID" ReadOnly="True" DataField="ID" >
+                                        <asp:BoundField HeaderText="ID" ReadOnly="True" DataField="ID" SortExpression="ID" >
                                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                         </asp:BoundField>
                                         <asp:BoundField HeaderText="Тип на Опрема" SortExpression="TipOprema" DataField="TipOprema" 
@@ -364,38 +362,38 @@
                                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                         </asp:BoundField>
                                         <asp:ButtonField CommandName="Производител" DataTextField="Proizvoditel" 
-                                            HeaderText="Производител" ShowHeader="True" />
-                                        <asp:BoundField HeaderText="Модел" DataField="Model" ReadOnly="True" />
+                                            HeaderText="Производител" ShowHeader="True" SortExpression="Proizvoditel" />
+                                        <asp:BoundField HeaderText="Модел" DataField="Model" ReadOnly="True" SortExpression="Model" />
                                         <asp:BoundField HeaderText="Бр. Производ" DataField="BrojProdukt" 
-                                            ReadOnly="True" />
-                                        <asp:BoundField HeaderText="Сер. Бр." DataField="SeriskiBroj" ReadOnly="True" />
-                                        <asp:BoundField HeaderText="Part NO." DataField="PartNo" ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="BrojProdukt" />
+                                        <asp:BoundField HeaderText="Сер. Бр." DataField="SeriskiBroj" ReadOnly="True" SortExpression="SeriskiBroj" />
+                                        <asp:BoundField HeaderText="Part NO." DataField="PartNo" ReadOnly="True" SortExpression="PartNo" />
                                         <asp:BoundField DataField="InventarenBroj" HeaderText="Инв. Бр." 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="InventarenBroj" />
                                         <asp:BoundField HeaderText="Добавувач" DataField="Dobavuvac" ReadOnly="True" SortExpression="Dobavuvac" />
                                         <asp:BoundField HeaderText="Набавна Цена" DataField="NabavnaCena" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="NabavnaCena" />
                                         <asp:BoundField HeaderText="Број на Фактура" DataField="BrojNaFaktura" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="BrojNaFaktura" />
                                         <asp:BoundField HeaderText="Датум на Внес" DataField="DatumNaVnes" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="DatumNaVnes" />
                                         <asp:BoundField HeaderText="Датум на Фактура" DataField="DatumNaFaktura" 
-                                            ReadOnly="True" />
-                                        <asp:BoundField HeaderText="Статус" DataField="Status" />
-                                        <asp:BoundField HeaderText="Корисник" DataField="Korisnik" />
+                                            ReadOnly="True" SortExpression="DatumNaFaktura" />
+                                        <asp:BoundField HeaderText="Статус" DataField="Status" SortExpression="Status" />
+                                        <asp:BoundField HeaderText="Корисник" DataField="Korisnik" SortExpression="Korisnik" />
                                         <asp:BoundField HeaderText="Град" DataField="Grad" SortExpression="Grad" />
                                         <asp:BoundField HeaderText="ОЕ" 
-                                            DataField="OrganizacionaEdinica" />
-                                        <asp:BoundField HeaderText="Служба" DataField="Sluzba" />
-                                        <asp:BoundField HeaderText="Сектор" DataField="Sektor" />
+                                            DataField="OrganizacionaEdinica" SortExpression="OrganizacionaEdinica" />
+                                        <asp:BoundField HeaderText="Служба" DataField="Sluzba" SortExpression="Sluzba" />
+                                        <asp:BoundField HeaderText="Сектор" DataField="Sektor" SortExpression="Sektor" />
                                         <asp:BoundField HeaderText="Број на барање" DataField="BrojNaBaranje" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="BrojNaBaranje" />
                                         <asp:BoundField HeaderText="Број на налог" DataField="BrojNaNalog" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="BrojNaNalog" />
                                         <asp:BoundField HeaderText="Гаранциски Рок" DataField="GaranciskiRok" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="GaranciskiRok" />
                                         <asp:BoundField HeaderText="Број на check листа" DataField="BrojCheckLista" 
-                                            ReadOnly="True" />
+                                            ReadOnly="True" SortExpression="BrojCheckLista" />
                                         <asp:BoundField HeaderText="Забелешка" DataField="Zabeleska" />
                                         <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True" 
                                             UpdateText="Промени" />

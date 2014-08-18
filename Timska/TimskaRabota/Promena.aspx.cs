@@ -11,7 +11,8 @@ using System.Configuration;
 public partial class Promena : System.Web.UI.Page
 {
     string denes = DateTime.Today.ToString("MM-dd-yyyy");
-        
+
+    string id;
     protected void Page_Load(object sender, EventArgs e)
     {
         ddlStatus.SelectedIndex = 0;
@@ -208,9 +209,7 @@ public partial class Promena : System.Web.UI.Page
     {
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-        //string query = "SELECT MAX(ID) FROM OPIS";
-        //int id;
-        //bool success = int.TryParse(query, out id);
+        
         string sqlString = "INSERT INTO OPIS (TipOprema,Proizvoditel,Model,BrojProdukt,SeriskiBroj,PartNo,InventarenBroj,Dobavuvac,NabavnaCena,BrojNaFaktura,DatumNaVnes,DatumNaFaktura,Status,Korisnik,Grad,OrganizacionaEdinica,Sluzba,Sektor,BrojNaBaranje,BrojNaNalog,GaranciskiRok,BrojCheckLista,Zabeleska) VALUES (@TipOprema,@Proizvoditel,@Model,@BrojProdukt,@SeriskiBroj,@PartNo,@InventarenBroj,@Dobavuvac,@NabavnaCena,@BrojNaFaktura,@DatumNaVnes,@DatumNaFaktura,@Status,@Korisnik,@Grad,@OrganizacionaEdinica,@Sluzba,@Sektor,@BrojNaBaranje,@BrojNaNalog,@GaranciskiRok,@BrojCheckLista,@Zabeleska)";
 
         try
@@ -304,12 +303,18 @@ public partial class Promena : System.Web.UI.Page
         {
             divThankYou.Visible = true;
 
-            int index = Convert.ToInt32(e.CommandArgument);
-
+             int index = Convert.ToInt32(e.CommandArgument);
+      //       z = gvPromena.SelectedIndex;
+            
             // Get the last name of the selected author from the appropriate
             // cell in the GridView control.
-            GridViewRow selectedRow = gvPromena.Rows[index];
 
+             GridViewRow selectedRow = gvPromena.Rows[index];
+            //z = Server.HtmlDecode(selectedRow.Cells[0].Text);
+             //int rowindex = Convert.ToInt32(e.CommandArgument);
+             // z = Convert.ToInt32(gvPromena.DataKeys[rowindex].Value);
+             id = selectedRow.Cells[0].Text;
+             lblPomosnaID.Text = id;
             string tipoprema = selectedRow.Cells[1].Text;
             txtTipOprema.Text = tipoprema;
 
@@ -340,8 +345,8 @@ public partial class Promena : System.Web.UI.Page
             string brojfaktura = selectedRow.Cells[10].Text;
             txtBrojNaFaktura1.Text = brojfaktura;
 
-            string datumvnes = selectedRow.Cells[11].Text;
-            txtDatumNaVnes.Text = datumvnes;
+            //string datumvnes = selectedRow.Cells[11].Text;
+            //txtDatumNaVnes.Text = datumvnes;
 
             string datumfaktura = selectedRow.Cells[12].Text;
             txtDatumNaFaktura.Text = datumfaktura;
@@ -384,14 +389,78 @@ public partial class Promena : System.Web.UI.Page
     }
     protected void Button2_Click1(object sender, EventArgs e)
     {
-        //divThankYou.Visible = false;
-        GridViewUpdateEventArgs a = e as GridViewUpdateEventArgs;
-        gvPromena_RowUpdating(sender, a);
+        //GridViewUpdateEventArgs a = e as GridViewUpdateEventArgs;
+        //gvPromena_RowUpdating(sender, a);
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        int x = Convert.ToInt32(lblPomosnaID.Text);
+        string sqlString = "UPDATE OPIS SET Status=@Status,Korisnik=@Korisnik,Grad=@Grad,OrganizacionaEdinica=@OrganizacionaEdinica,Sluzba=@Sluzba,Sektor=@Sektor,Zabeleska=@Zabeleska WHERE ID='" + x + "'";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+       // TextBox tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[13].Controls[0];
+        komanda.Parameters.AddWithValue("@Status", txtStatus.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[14].Controls[0];
+        komanda.Parameters.AddWithValue("@Korisnik", txtKorisnik.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[15].Controls[0];
+        komanda.Parameters.AddWithValue("@Grad", txtGrad.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[16].Controls[0];
+        komanda.Parameters.AddWithValue("@OrganizacionaEdinica", txtOrganizacionaEdinica.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[17].Controls[0];
+        komanda.Parameters.AddWithValue("@Sluzba", txtSluzba.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[18].Controls[0];
+        komanda.Parameters.AddWithValue("@Sektor", txtSektor.Text);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[23].Controls[0];
+        komanda.Parameters.AddWithValue("@Zabeleska", txtZabeleska1.Text);
+
+        //komanda.Parameters.AddWithValue("@ID", gvPromena.Rows[e.RowIndex].Cells[0].Text);
+        komanda.Parameters.AddWithValue("@ID", x);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvPromena.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniMaster();
+        divThankYou.Visible = false;
+       
     }
 
     protected void gvPromena_Sorting(object sender, GridViewSortEventArgs e)
     {
-
+        DataSet ds = (DataSet)ViewState["dataset"];
+        DataView dv = ds.Tables[0].DefaultView;
+        if (ViewState["nasoka"] == null)
+            ViewState["nasoka"] = "ASC";
+        if ((string)ViewState["nasoka"] == "DESC")
+        {
+            dv.Sort=e.SortExpression + " DESC";
+            ViewState["nasoka"] = "ASC";
+        }
+        else
+        {
+            dv.Sort = e.SortExpression + " ASC";
+            ViewState["nasoka"] = "DESC";
+        }
+        gvPromena.DataSource = dv;
+        gvPromena.DataBind();
     }
     protected void btnSkrieno_Click(object sender, EventArgs e)
     {
@@ -408,5 +477,4 @@ public partial class Promena : System.Web.UI.Page
         Response.Redirect("Sifrarnici.aspx");
     }
 
-    
 }
