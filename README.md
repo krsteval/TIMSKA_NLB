@@ -20,7 +20,7 @@
       Системот управуваа и со привилегиите на корисниците за пристап во системот. 
 <img src="http://i.imgur.com/JLKPezD.png" alt="Start Screen"/>
 
-<img src="http://i.imgur.com/7qTP3qg.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/aSrFIfK.png" alt="Start Screen"/>
 * * *
 <b>1.1.	Евиденција на набавената опрема</b>
 	Оваа опција треба да овозможи додавање на нов инвентар . Новата опрема ќе биде дефинирана со следните податоци:
