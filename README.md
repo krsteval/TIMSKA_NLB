@@ -13,4 +13,4 @@
         •	Следење на статусот на опремата и нејзината локација во банката
         •	Прегледи и пребарување според предефинирани критериуми 
 
-	<img src="http://i.imgur.com/h8BcPPA.png" alt="Start Screen"/> </p>	
+	<img src="http://i.imgur.com/h8BcPPA.png" alt="Start Screen"/> 	
