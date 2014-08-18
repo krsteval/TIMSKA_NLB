@@ -115,7 +115,7 @@
 						                    <li class="divider-vertical"></li>
 						                    <li><asp:Button ID="btnSifrarnici" BackColor="Transparent" runat="server"  BorderStyle="None" Text="Шифрарници" ToolTip="Уредување на шифрарници" OnClick="btnSifrarnici_Click"></asp:Button></li>
 						                    <li class="divider-vertical"></li>
-						                    <li><a href="">Contact</a></li>
+						                    <li><asp:Button ID="btnIstorijat" BackColor="Transparent" runat="server"  BorderStyle="None" Text="Историјат" ToolTip="Историјат на промените" OnClick="btnIstorijat_Click"></asp:Button></li>
 						                    <li class="divider-vertical"></li>
 							           
 						            </ul>
@@ -163,31 +163,38 @@
                                 <asp:Label ID="lblDatumNaFaktura1" runat="server">Датум на фактура</asp:Label>
                                 <asp:TextBox ID="txtDatumNaFaktura" runat="server" ReadOnly="True"></asp:TextBox>
                         </div>
-                        <div style="float:right">
-                                
-                                <asp:Label ID="lblStatus" runat="server">Статус</asp:Label>
-                                <asp:TextBox ID="txtStatus" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblKorisnik" runat="server">Корисник</asp:Label>
-                                <asp:TextBox ID="txtKorisnik" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblGrad" runat="server">Град</asp:Label>
-                                <asp:TextBox ID="txtGrad" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblOrganizacionaEdinica" runat="server">Организациона Единица</asp:Label>
-                                <asp:TextBox ID="txtOrganizacionaEdinica" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblSluzba" runat="server">Служба</asp:Label>
-                                <asp:TextBox ID="txtSluzba" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblSektor" runat="server">Сектор</asp:Label>
-                                <asp:TextBox ID="txtSektor" runat="server"></asp:TextBox>
-                                <asp:Label ID="lblBrojNaBaranje" runat="server">Број на барање</asp:Label>
-                                <asp:TextBox ID="txtBrojNaBaranje1" runat="server" ReadOnly="True"></asp:TextBox>
-                                <asp:Label ID="lblBrojNaNalog" runat="server">Број на налог</asp:Label>
-                                <asp:TextBox ID="txtBrojNaNalog1" runat="server" ReadOnly="True"></asp:TextBox>
-                                <asp:Label ID="lblGaranciskiRok" runat="server">Гаранциски Рок</asp:Label>
-                                <asp:TextBox ID="txtGaranciskiRok1" runat="server" ReadOnly="True"></asp:TextBox>
-                                <asp:Label ID="lblBrojCheckLista" runat="server">Број на Check листа</asp:Label>
-                                <asp:TextBox ID="txtBrojCheckLista1" runat="server" ReadOnly="True"></asp:TextBox>
-                                <asp:Label ID="lblZabeleska" runat="server">Забелешка</asp:Label>
-                                <asp:TextBox ID="txtZabeleska1" runat="server"></asp:TextBox>
-                        </div>    
+                    <div style="float: right">
+
+                        <asp:Label ID="lblStatus" runat="server">Статус</asp:Label>
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource7" DataTextField="Status" DataValueField="Status"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Status] FROM [STATUS]"></asp:SqlDataSource>
+                        <asp:Label ID="lblKorisnik" runat="server">Корисник</asp:Label>
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource8" DataTextField="Korisnik" DataValueField="Korisnik"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Korisnik] FROM [KORISNIK]"></asp:SqlDataSource>
+                        <asp:Label ID="lblGrad" runat="server">Град</asp:Label>
+                        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource9" DataTextField="Grad" DataValueField="Grad"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Grad] FROM [GRAD]"></asp:SqlDataSource>
+                        <asp:Label ID="lblOrganizacionaEdinica" runat="server">Организациона Единица</asp:Label>
+                        <asp:DropDownList ID="DropDownList4" DataSourceID="SqlDataSource10" DataTextField="OrganizacionaEdinica" DataValueField="OrganizacionaEdinica" runat="server"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [OrganizacionaEdinica] FROM [ORGANIZACIONA_EDINICA]"></asp:SqlDataSource>
+                        <asp:Label ID="lblSluzba" runat="server">Служба</asp:Label>
+                        <asp:DropDownList ID="DropDownList5" DataSourceID="SqlDataSource11" runat="server" DataTextField="Sluzba" DataValueField="Sluzba"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sluzba] FROM [SLUZBA]"></asp:SqlDataSource>
+                        <asp:Label ID="lblSektor" runat="server">Сектор</asp:Label>
+                        <asp:DropDownList ID="DropDownList6" DataSourceID="SqlDataSource12" runat="server" DataTextField="Sektor" DataValueField="Sektor"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sektor] FROM [SEKTOR]"></asp:SqlDataSource>
+
+                        <asp:Label ID="lblBrojNaBaranje" runat="server">Број на барање</asp:Label>
+                        <asp:TextBox ID="txtBrojNaBaranje1" runat="server" ReadOnly="True"></asp:TextBox>
+                        <asp:Label ID="lblBrojNaNalog" runat="server">Број на налог</asp:Label>
+                        <asp:TextBox ID="txtBrojNaNalog1" runat="server" ReadOnly="True"></asp:TextBox>
+                        <asp:Label ID="lblGaranciskiRok" runat="server">Гаранциски Рок</asp:Label>
+                        <asp:TextBox ID="txtGaranciskiRok1" runat="server" ReadOnly="True"></asp:TextBox>
+                        <asp:Label ID="lblBrojCheckLista" runat="server">Број на Check листа</asp:Label>
+                        <asp:TextBox ID="txtBrojCheckLista1" runat="server" ReadOnly="True"></asp:TextBox>
+                        <asp:Label ID="lblZabeleska" runat="server">Забелешка</asp:Label>
+                        <asp:TextBox ID="txtZabeleska1" runat="server"></asp:TextBox>
+                    </div>    
                 </p>
                 <div>
                     <asp:Label ID="lblPomosnaID" runat="server" Text=" " style="margin-top:-20px;position:absolute;color:transparent;" Font-Size="XX-Small" ></asp:Label>

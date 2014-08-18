@@ -593,26 +593,32 @@
 						<asp:ImageButton runat="server" ID="btnSkrieno" Visible="True"  src="images/Tutunska.png" style="width:300px"
                                             />  
 			 	    </div>		  
-	        	    <div class="nav-collapse collapse" > 
-						    <ul	id="nav-menu" class="nav" style="margin-left: 300px;">
-							    <li class="divider-vertical"></li>
-								    <li><asp:Button runat="server" ID="btnPocetna" Text="Почетна" BackColor="Transparent" BorderStyle="None" OnClick="btnPocetna_Click" /></li>
-						            <li class="divider-vertical"></li>
-						            <li id="lblTest" runat="server"><asp:Button runat="server" BackColor="Transparent" ID="btnSledi" Text="Следење на опремата" BorderStyle="None" OnClick="btnSledi_Click" /></li>
-						            <li class="divider-vertical"></li>
-						            <li><asp:Button ID="btnSifrarnici" runat="server" Text="Шифрарници" BackColor="Transparent" BorderStyle="None" ToolTip="Уредување на шифрарници" OnClick="btnSifrarnici_Click" ></asp:Button></li>
-						            <li class="divider-vertical"></li>
-						            <li><a href="">Contact</a></li>
-						            <li class="divider-vertical"></li>
-							           
-						    </ul>
-                                <div style="float:right;display:inline;">
-                                <label id="lblUser" style="margin-top:10px;float:left;margin-right:5px;">User:</label>
-                                <p style="float:left;display:inline;margin:8px 5px 0 0;font-weight:bold;"><asp:Label ID="lblUser" runat="server" Visible="true" ></asp:Label></p>
-                                <p style="float:right;display:inline;margin:5px 5px 0 0;">
-                                    <asp:Button ID="btnLogout" runat="server" class="btn btn-danger" style="margin-right:5px;margin-top:-2px;" Text="Log Out" OnClick="btnLogout_Click" ></asp:Button></p>
-                            </div>
-				    </div>
+                    <div class="nav-collapse collapse">
+                        <ul id="nav-menu" class="nav" style="margin-left: 300px;">
+                            <li class="divider-vertical"></li>
+                            <li>
+                                <asp:Button runat="server" ID="btnPocetna" Text="Почетна" BackColor="Transparent" BorderStyle="None" OnClick="btnPocetna_Click" /></li>
+                            <li class="divider-vertical"></li>
+                            <li id="lblTest" runat="server">
+                                <asp:Button runat="server" BackColor="Transparent" ID="btnSledi" Text="Следење на опремата" BorderStyle="None" OnClick="btnSledi_Click" /></li>
+                            <li class="divider-vertical"></li>
+                            <li>
+                                <asp:Button ID="btnSifrarnici" runat="server" Text="Шифрарници" BackColor="Transparent" BorderStyle="None" ToolTip="Уредување на шифрарници" OnClick="btnSifrarnici_Click"></asp:Button></li>
+                            <li class="divider-vertical"></li>
+                            <li>
+                                <asp:Button ID="btnIstorijat" BackColor="Transparent" runat="server" BorderStyle="None" Text="Историјат" ToolTip="Историјат на промените" OnClick="btnIstorijat_Click"></asp:Button></li>
+                            <li class="divider-vertical"></li>
+
+                        </ul>
+                        <div style="float: right; display: inline;">
+                            <label id="lblUser" style="margin-top: 10px; float: left; margin-right: 5px;">User:</label>
+                            <p style="float: left; display: inline; margin: 8px 5px 0 0; font-weight: bold;">
+                                <asp:Label ID="lblUser" runat="server" Visible="true"></asp:Label></p>
+                            <p style="float: right; display: inline; margin: 5px 5px 0 0;">
+                                <asp:Button ID="btnLogout" runat="server" class="btn btn-danger" Style="margin-right: 5px; margin-top: -2px;" Text="Log Out" OnClick="btnLogout_Click"></asp:Button>
+                            </p>
+                        </div>
+                    </div>
 	            </div>
 	            </div>
     	    </div>

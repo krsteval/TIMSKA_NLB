@@ -957,4 +957,8 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         }
         Ispolni2();
     }
+    protected void btnIstorijat_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Istorijat.aspx");
+    }
 }

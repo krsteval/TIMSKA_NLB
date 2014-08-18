@@ -93,7 +93,7 @@
 
                                 </div>
                                 <div style="clear: both;">&nbsp;<br />
-                                    <asp:Label ID="lblGreska" runat="server"></asp:Label>
+                                    <asp:Label ID="lblGreska" runat="server" ForeColor="Red"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Button ID="btnOK" class="btn btn-success" runat="server" onclick="btnOK_Click" Text="Влез" />
