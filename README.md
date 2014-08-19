@@ -25,16 +25,15 @@
 Постојат два мода на пристап од страна на корисниците кои го користат системот, <b>Admin</b> и <b>User</b>.
 #User мод
    Корисниците<i>(User мод)</i> имаат за цел само да вршат преглед на опремата, да пребаруваат по клучни зборови како и да ги увидат промените кои се направени, како и кои корисници ги извршиле.
-
+<img src="http://i.imgur.com/CRy8tA9.png" alt="Start Screen"/>
+<br/>
 <img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
-
+<br/>
 <img src="http://i.imgur.com/YFhlgJi.png" alt="Start Screen"/>
 * * *
 #Admin мод
    Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
-<img src="http://i.imgur.com/hpOmAXg.png" alt="Start Screen"/>
-
-
+<br/>
 <img src="http://i.imgur.com/uFnqyhV.png" alt="Start Screen"/>
 <img src="http://i.imgur.com/rFTKMmG.png" alt="Start Screen"/>
 <img src="http://i.imgur.com/HOztEUV.png" alt="Start Screen"/>
