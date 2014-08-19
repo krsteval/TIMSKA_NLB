@@ -25,16 +25,20 @@
 Постојат два мода на пристап од страна на корисниците кои го користат системот, <b>Admin</b> и <b>User</b>.
 
    Корисниците<i>(User мод)</i> имаат за цел само да вршат преглед на опремата, да пребаруваат по клучни зборови како и да ги увидат промените кои се направени, како и кои корисници ги извршиле.
-   
-   Додека Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
-<img src="http://i.imgur.com/dOqR0dz.png" alt="Start Screen"/> <img src="http://i.imgur.com/hpOmAXg.png" alt="Start Screen"/> 
 #User мод
 <img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/>
 <img src="http://i.imgur.com/YFhlgJi.png" alt="Start Screen"/>
+* * *
+   Додека Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
+<img src="http://i.imgur.com/dOqR0dz.png" alt="Start Screen"/> <img src="http://i.imgur.com/hpOmAXg.png" alt="Start Screen"/>
+
 #Admin мод
 <img src="http://i.imgur.com/uFnqyhV.png" alt="Start Screen"/>
 <img src="http://i.imgur.com/rFTKMmG.png" alt="Start Screen"/>
-<img src="" alt="Start Screen"/>
+<img src="http://i.imgur.com/HOztEUV.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/IIQBq5u.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/vMsRoOA.png" alt="Start Screen"/>
+<img src="http://i.imgur.com/Dt7Dcu0.png" alt="Start Screen"/>
 
 * * *
 <b>1.1.	Евиденција на набавената опрема</b>
