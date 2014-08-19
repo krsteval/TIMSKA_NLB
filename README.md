@@ -35,14 +35,7 @@
 #Admin мод
    Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
 <br/>
-<img src="http://i.imgur.com/uFnqyhV.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/rFTKMmG.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/HOztEUV.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/IIQBq5u.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/vMsRoOA.png" alt="Start Screen"/>
-<img src="http://i.imgur.com/Dt7Dcu0.png" alt="Start Screen"/>
-
-* * *
+<img src="http://i.imgur.com/uFnqyhV.png" alt="Start Screen"/><br />
 <b>1.1.	Евиденција на набавената опрема</b>
 	Оваа опција треба да овозможи додавање на нов инвентар . Новата опрема ќе биде дефинирана со следните податоци:
 
@@ -75,3 +68,26 @@
 	Решението овозможува поврзување со постојната база на вработени во банката, од каде ќе можат да се црпат податоците за вработените.
 
 - - -
+<img src="http://i.imgur.com/rFTKMmG.png" alt="Start Screen"/><br />
+1.2.	Измени на внесените податоци за опремата
+	
+Преку оваа опција се овозможува измени на внесените податоци за опремата. Дозволено е измена на следните податоци :
+•	Статус
+•	Корисник
+•	Град
+•	Организациона единица
+•	Служба
+•	Сектор
+•	Поле за забелешка 
+- - -
+<img src="http://i.imgur.com/HOztEUV.png" alt="Start Screen"/><br />
+1.3.	Уредување на шифрарниците
+
+Уредување на шифрарниците треба да биде овозможено од страна на вработени – администратори на решението со посебни привилегии за таа намена.
+
+<img src="http://i.imgur.com/IIQBq5u.png" alt="Start Screen"/><br />
+<img src="http://i.imgur.com/vMsRoOA.png" alt="Start Screen"/><br />
+<img src="http://i.imgur.com/Dt7Dcu0.png" alt="Start Screen"/><br />
+
+* * *
+
