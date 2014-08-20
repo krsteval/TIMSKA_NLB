@@ -243,6 +243,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni1();
+        Response.Redirect("Sifrarnici.aspx");
     }
     protected void btnDodadiProzvoditel_Click(object sender, EventArgs e)
     {
@@ -353,6 +354,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni3();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni3()
@@ -439,6 +441,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni4();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni4()
@@ -525,6 +528,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni5();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni5()
@@ -611,6 +615,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni6();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni6()
@@ -697,6 +702,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni7();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni7()
@@ -783,6 +789,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni8();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni8()
@@ -869,6 +876,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni9();
+        Response.Redirect("Sifrarnici.aspx");
     }
 
     private void Ispolni9()
@@ -956,6 +964,8 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni2();
+
+        Response.Redirect("Sifrarnici.aspx");
     }
     protected void btnIstorijat_Click(object sender, EventArgs e)
     {

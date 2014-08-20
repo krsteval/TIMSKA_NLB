@@ -39,6 +39,10 @@
 	            //$("#GridView").hide();
 	            
 	        });
+	        var pickerOpts = {
+	            dateFormat: "dd/mm/yy"
+	        };
+	        $("#txtDadumFaktura").datepicker(pickerOpts);
 	        //// just for the demos, avoids form submit
 	        //jQuery.validator.setDefaults({
 	        //    debug: true,
@@ -274,7 +278,7 @@
                                 <asp:Label ID="lblDatumNaVnes" runat="server" Text="Датум на фактура"></asp:Label>
                             </td>
                             <td class="style3">
-                                <asp:TextBox ID="txtDadumFaktura" type="date" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDadumFaktura" runat="server"></asp:TextBox>
                              </td>
                         </tr>
                         <tr>
