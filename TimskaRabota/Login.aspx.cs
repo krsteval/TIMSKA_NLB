@@ -50,7 +50,7 @@ public partial class Login : System.Web.UI.Page
             }
             else
             {
-                lblGreska.Text = "User Not Found!";
+                lblGreska.Text = "Корисникот не е пронајден! Проверето го Корисничкото име и Лозинката!";
             }
             cn.Close();
 

@@ -12,6 +12,8 @@ using System.Data;
 
 public partial class Pocetna : System.Web.UI.Page
 {
+
+    string id;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["Username"] != null)
@@ -70,7 +72,7 @@ public partial class Pocetna : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        gvOpis.Visible = false;
+        divThankYou.Visible = false;
        
     }
    
@@ -119,12 +121,12 @@ public partial class Pocetna : System.Web.UI.Page
         if (e.CommandName == "Производител")
         {
             divThankYou.Visible = true;
-
             int index = Convert.ToInt32(e.CommandArgument);
-
-            // Get the last name of the selected author from the appropriate
-            // cell in the GridView control.
+            
             GridViewRow selectedRow = gvOpis.Rows[index];
+           
+            id = selectedRow.Cells[0].Text;
+            lblPomosnaID.Text = id;
 
             string tipoprema = selectedRow.Cells[1].Text;
             txtTipOprema.Text = tipoprema;
@@ -156,29 +158,26 @@ public partial class Pocetna : System.Web.UI.Page
             string brojfaktura = selectedRow.Cells[10].Text;
             txtBrojNaFaktura1.Text = brojfaktura;
 
-            string datumvnes = selectedRow.Cells[11].Text;
-            txtDatumNaVnes.Text = datumvnes;
-
             string datumfaktura = selectedRow.Cells[12].Text;
             txtDatumNaFaktura.Text = datumfaktura;
 
-            string status = selectedRow.Cells[13].Text;
-            txtStatus.Text = status;
+            //string status = selectedRow.Cells[13].Text;
+            //txtStatus.Text = status;
 
-            string korisnik = selectedRow.Cells[14].Text;
-            txtKorisnik.Text = korisnik;
+            //string korisnik = selectedRow.Cells[14].Text;
+            //txtKorisnik.Text = korisnik;
 
-            string grad = selectedRow.Cells[15].Text;
-            txtGrad.Text = grad;
+            //string grad = selectedRow.Cells[15].Text;
+            //txtGrad.Text = grad;
 
-            string organizaciona = selectedRow.Cells[16].Text;
-            txtOrganizacionaEdinica.Text = organizaciona;
+            //string organizaciona = selectedRow.Cells[16].Text;
+            //txtOrganizacionaEdinica.Text = organizaciona;
 
-            string sluzba = selectedRow.Cells[17].Text;
-            txtSluzba.Text = sluzba;
+            //string sluzba = selectedRow.Cells[17].Text;
+            //txtSluzba.Text = sluzba;
 
-            string sektor = selectedRow.Cells[18].Text;
-            txtSektor.Text = sektor;
+            //string sektor = selectedRow.Cells[18].Text;
+            //txtSektor.Text = sektor;
 
             string brojbaranje = selectedRow.Cells[19].Text;
             txtBrojNaBaranje1.Text = brojbaranje;
@@ -198,19 +197,88 @@ public partial class Pocetna : System.Web.UI.Page
         }
 
     }
-    protected void Button2_Click1(object sender, EventArgs e)
-    {
-        divThankYou.Visible = false;
-    }
 
     protected void gvOpis_Sorting(object sender, GridViewSortEventArgs e)
     {
-
+        DataSet ds = (DataSet)ViewState["dataset"];
+        DataView dv = ds.Tables[0].DefaultView;
+        if (ViewState["nasoka"] == null)
+            ViewState["nasoka"] = "ASC";
+        if ((string)ViewState["nasoka"] == "DESC")
+        {
+            dv.Sort = e.SortExpression + " DESC";
+            ViewState["nasoka"] = "ASC";
+        }
+        else
+        {
+            dv.Sort = e.SortExpression + " ASC";
+            ViewState["nasoka"] = "DESC";
+        }
+        gvOpis.DataSource = dv;
+        gvOpis.DataBind();
     }
     protected void btnSkrieno_Click(object sender, EventArgs e)
     {
         btnPrebaraj_Click(sender, e);
     }
 
-    
+
+    protected void Zacuvaj_Click(object sender, EventArgs e)
+    {
+        //GridViewUpdateEventArgs a = e as GridViewUpdateEventArgs;
+        //gvPromena_RowUpdating(sender, a);
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        int x = Convert.ToInt32(lblPomosnaID.Text);
+        string sqlString = "UPDATE OPIS SET Status=@Status,Korisnik=@Korisnik,Grad=@Grad,OrganizacionaEdinica=@OrganizacionaEdinica,Sluzba=@Sluzba,Sektor=@Sektor,Zabeleska=@Zabeleska WHERE ID='" + x + "'";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        // TextBox tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[13].Controls[0];
+        komanda.Parameters.AddWithValue("@Status", DropDownList1.SelectedItem.Value);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[14].Controls[0];
+        komanda.Parameters.AddWithValue("@Korisnik", DropDownList2.SelectedItem.Value);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[15].Controls[0];
+        komanda.Parameters.AddWithValue("@Grad", DropDownList3.SelectedItem.Value);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[16].Controls[0];
+        komanda.Parameters.AddWithValue("@OrganizacionaEdinica", DropDownList4.SelectedIndex+1);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[17].Controls[0];
+        komanda.Parameters.AddWithValue("@Sluzba", DropDownList5.SelectedItem.Value);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[18].Controls[0];
+        komanda.Parameters.AddWithValue("@Sektor", DropDownList6.SelectedItem.Value);
+
+        //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[23].Controls[0];
+        komanda.Parameters.AddWithValue("@Zabeleska", txtZabeleska1.Text);
+
+        //komanda.Parameters.AddWithValue("@ID", gvPromena.Rows[e.RowIndex].Cells[0].Text);
+        komanda.Parameters.AddWithValue("@ID", x);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvOpis.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniMaster();
+        divThankYou.Visible = false;
+    }
+    protected void btnIstorijat_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Istorijat.aspx");
+    }
 }
