@@ -60,7 +60,10 @@
 	            //$("#GridView").hide();
 	            
 	        });
+<<<<<<< HEAD:Timska/TimskaRabota/Promena.aspx
 
+=======
+>>>>>>> 2dd3dd6e1b283d4bf214c96b8538a2e252b40b37:TimskaRabota/Promena.aspx
 	        var pickerOpts = {
 	            dateFormat: "dd/mm/yy"
 	        };
@@ -319,6 +322,7 @@
                                 <td><asp:DropDownList ID="ddlModel" runat="server" DataSourceID="SqlDataSource2" DataTextField="Model" DataValueField="Model"  ></asp:DropDownList></td> 
                                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Model] FROM [MODEL]"></asp:SqlDataSource>
                             
+<<<<<<< HEAD:Timska/TimskaRabota/Promena.aspx
                                 <td><label for="txtBrojProdukt">Број на Продукт</label></td> 
                                 <td><asp:TextBox ID="txtBrojProdukt" name="txtBrojProdukt"  runat="server" type="text" placeholder="Број на Продукт"></asp:TextBox>
                                       <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtBrojProdukt" ErrorMessage="*" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>                                             
@@ -364,6 +368,53 @@
                             </tr>
                             <tr>
                                 <td class="style2">
+=======
+                            <td><label for="txtBrojProdukt">Број на Продукт</label></td> 
+                            <td><asp:TextBox ID="txtBrojProdukt" name="txtBrojProdukt"  runat="server" type="text" placeholder="Број на Продукт"></asp:TextBox>
+                                  <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtBrojProdukt" ErrorMessage="*" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>                                             
+                            </td>     
+                        </tr>
+                        <tr>         
+                          <td><label for="seriski_broj">Сериски Број</label></td>
+                          <td> <asp:TextBox ID="txtSeriskiBroj" runat="server" type="number" placeholder="Сериски Број"></asp:TextBox>
+                              <%--<asp:RequiredFieldValidator ID="prvoPole" runat="server" ControlToValidate="txtSeriskiBroj" ErrorMessage="  *" Font-Bold="True" ForeColor="Red" Font-Size="X-Large"></asp:RequiredFieldValidator>--%>
+                            </td>
+                          <td><label for="part_number">Part Number</label></td>
+                          <td><asp:TextBox ID="txtPartNo" runat="server"  type="number" placeholder="Part Number" ></asp:TextBox>
+                              <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtPartNo" ErrorMessage="*" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>                          
+                           </td>
+                        </tr>
+                        <tr>     
+                          <td> <label for="inventaren_broj">Инвентарен Број</label></td>
+                          <td> <asp:TextBox ID="txtInventarenBroj" runat="server"  type="number"  placeholder="Инвентарен Број"></asp:TextBox>
+                              <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtInventarenBroj" ErrorMessage="*" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                            </td>
+                          <td><label for="dobavuvac">Добавувач</label></td>
+                          <td> <asp:DropDownList ID="ddlDobavuvac" runat="server" type="text"  placeholder="Добавувач" DataSourceID="SQLDDLDobavuvac" DataTextField="Dobavuvac" DataValueField="Dobavuvac"></asp:DropDownList>
+                              <asp:SqlDataSource ID="SQLDDLDobavuvac" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Dobavuvac] FROM [DOBAVUVAC]"></asp:SqlDataSource>
+                            </td>
+                        </tr>
+                        <tr>                    
+                          <td><label for="nabavna_cena">Набавна Цена</label></td>
+                          <td><asp:TextBox ID="txtNabavnaCena" runat="server" type="number"  placeholder="Набавна Цена"></asp:TextBox>
+                              <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNabavnaCena" ErrorMessage="*" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                            </td>
+                          <td><label for="broj_na_faktura">Број на Фактура</label></td>
+                          <td><asp:TextBox ID="txtBrojNaFaktura" runat="server" type="number"  placeholder="Број на Фактура"></asp:TextBox>
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtBrojNaFaktura" ErrorMessage="*" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td class="style2">
+                                <asp:Label ID="lblDatumNaVnes" runat="server" Text="Датум на фактура"></asp:Label>
+                            </td>
+                            <td class="style3">
+                                <asp:TextBox ID="txtDadumFaktura" runat="server"></asp:TextBox>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="style2">
+>>>>>>> 2dd3dd6e1b283d4bf214c96b8538a2e252b40b37:TimskaRabota/Promena.aspx
                                 
                                 </td>
                                 <td class="style3">

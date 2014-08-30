@@ -307,7 +307,10 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         }
         Ispolni1();
         Response.Redirect("Sifrarnici.aspx");
+<<<<<<< HEAD:Timska/TimskaRabota/Sifrarnici.aspx.cs
 
+=======
+>>>>>>> 2dd3dd6e1b283d4bf214c96b8538a2e252b40b37:TimskaRabota/Sifrarnici.aspx.cs
     }
     protected void btnDodadiProzvoditel_Click(object sender, EventArgs e)
     {
@@ -1029,6 +1032,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
             konekcija.Close();
         }
         Ispolni2();
+<<<<<<< HEAD:Timska/TimskaRabota/Sifrarnici.aspx.cs
         Response.Redirect("Sifrarnici.aspx");
     }
 
@@ -1212,6 +1216,10 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         komanda.ExecuteNonQuery();
         konekcija.Close();
         IspolniSifrarnici2();
+=======
+
+        Response.Redirect("Sifrarnici.aspx");
+>>>>>>> 2dd3dd6e1b283d4bf214c96b8538a2e252b40b37:TimskaRabota/Sifrarnici.aspx.cs
     }
     protected void gvModel_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
