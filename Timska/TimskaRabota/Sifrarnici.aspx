@@ -25,13 +25,202 @@
     <script type="text/javascript" src="Scripts/jquery-ui-1.9.1.custom.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery-ui-1.10.3.custom.js"></script>
 	
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="Jquery/jquery.tablesorter.js"></script>
     <script type="text/javascript" src="Jquery/jquery.editinplace.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            
+            $("#Button20").click(function () {
+                $("#txtSektor").prop('required', false);
+            });
+            $("#Button18").click(function () {
+                $("#txtSektor").prop('required', false);
+            });
+            $("#btnDodadiSektor").click(function () {
+                $("#txtSektor").prop('required', true);
+                $("#txtSluzba").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+            });
+
+            $("#Button21").click(function () {
+                $("#txtSluzba").prop('required', false);
+            });
+            $("#Button23").click(function () {
+                $("#txtSluzba").prop('required', false);
+            });
+            $("#btnDodadiSluzba").click(function () {
+                $("#txtSluzba").prop('required', true);
+                $("#txtSektor").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+            });
+
+            $("#Button9").click(function () {
+                $("#txtOrganizaciona").prop('required', false);
+            });
+            $("#Button16").click(function () {
+                $("#txtOrganizaciona").prop('required', false);
+            });
+            $("#btnDodadiOrganizaciona").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtOrganizaciona").prop('required', true);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+            });
+
+            $("#Button12").click(function () {
+                $("#txtKorisnik").prop('required', false);
+            });
+            $("#Button14").click(function () {
+                $("#txtKorisnik").prop('required', false);
+            });
+            $("#btnDodadiKorisnik").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', true);
+                $("#txtStatus").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtModel").prop('required', false);
+            });
+
+            $("#Button15").click(function () {
+                $("#txtGrad").prop('required', false);
+            });
+            $("#Button17").click(function () {
+                $("#txtGrad").prop('required', false);
+            });
+            $("#btnDodadiGrad").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', true);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+            });
+
+            $("#Button11").click(function () {
+                $("#txtStatus").prop('required', false);
+            });
+            $("#Button6").click(function () {
+                $("#txtStatus").prop('required', false);
+            });
+            $("#btnDodadiStatus").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtStatus").prop('required', true);
+                $("#txtTipOprema").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtModel").prop('required', false);
+            });
+
+            $("#Button10").click(function () {
+                $("#txtDobavuvac").prop('required', false);
+            });
+            $("#Button8").click(function () {
+                $("#txtDobavuvac").prop('required', false);
+            });
+            $("#btnDodadiDobavuvac").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', true);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+            });
+
+            $("#Button4").click(function () {
+                $("#txtModel").prop('required', false);
+            });
+            $("#Button7").click(function () {
+                $("#txtModel").prop('required', false);
+            });
+            $("#btnDodadiModel").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtModel").prop('required', true);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtTipOprema").prop('required', false);
+            });
+
+            $("#Button3").click(function () {
+                $("#txtProizvoditel").prop('required', false);
+            });
+            $("#Button5").click(function () {
+                $("#txtProizvoditel").prop('required', false);
+            });
+            $("#btnDodadiProzvoditel").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtProizvoditel").prop('required', true);
+                $("#txtTipOprema").prop('required', false);
+            });
+
+            $("#Button1").click(function () {
+                $("#txtTipOprema").prop('required', false);
+            });
+            $("#btnIzgasiModalen").click(function () {
+                $("#txtTipOprema").prop('required', false);
+            });
+            $("#Button2").click(function () {
+                $("#txtSluzba").prop('required', false);
+                $("#txtSektor").prop('required', false);
+                $("#txtOrganizaciona").prop('required', false);
+                $("#txtGrad").prop('required', false);
+                $("#txtKorisnik").prop('required', false);
+                $("#txtStatus").prop('required', false);
+                $("#txtDobavuvac").prop('required', false);
+                $("#txtModel").prop('required', false);
+                $("#txtProizvoditel").prop('required', false);
+                $("#txtTipOprema").prop('required', true);
+            });
+
             //Modalen
             $("#primary").hide();
             $("#primary1").hide();
@@ -68,14 +257,13 @@
             $("#btnPrikaziDodadi9").hide();
             
 
-            $(".btn btn-danger pull-right").click(function () {
+            //$("#btnIzgasiModalen").click(function () {
 
-                $(".RemoveRequired").prop('required', false);
-            });
-            $(".btn btn-danger pull-right").click(function () {
-
-                $(".close").prop('required', false);
-            });
+            //    $(".RemoveRequired").prop('required', false);
+            //});
+            //$("#Button2").click(function () {
+            //    $(".RemoveRequired").prop('required', true);
+            //});
 
             $("#tipOprema").click(function () {
                 $("#ddlTipOprema").show();
@@ -405,7 +593,7 @@
             $("#btnPrikaziDodadi").click(function () {
 
                 $("#primary").show();
-                $("#txtTipOprema").prop('required', true);
+                //$("#txtTipOprema").prop('required', true);
                 $("#primary1").hide();
                 $("#primary2").hide();
                 $("#primary3").hide();
@@ -420,7 +608,7 @@
                
                 $("#primary").hide();
                 $("#primary1").show();
-                $("#txtProizvoditel").prop('required', true);
+                //$("#txtProizvoditel").prop('required', true);
                 $("#primary2").hide();
                 $("#primary3").hide();
                 $("#primary4").hide();
@@ -435,7 +623,7 @@
                 $("#primary").hide();
                 $("#primary1").hide();
                 $("#primary2").show();
-                $("#txtModel").prop('required', true);
+                //$("#txtModel").prop('required', true);
                 $("#primary3").hide();
                 $("#primary4").hide();
                 $("#primary5").hide();
@@ -449,7 +637,7 @@
                 $("#primary").hide();
                 $("#primary1").hide();
                 $("#primary2").hide();
-                $("#txtDobavuvac").prop('required', true);
+                //$("#txtDobavuvac").prop('required', true);
                 $("#primary3").show();
                 $("#primary4").hide();
                 $("#primary5").hide();
@@ -465,7 +653,7 @@
                 $("#primary2").hide();
                 $("#primary3").hide();
                 $("#primary4").show();
-                $("#txtStatus").prop('required', true);
+                //$("#txtStatus").prop('required', true);
                 $("#primary5").hide();
                 $("#primary6").hide();
                 $("#primary7").hide();
@@ -480,7 +668,7 @@
                 $("#primary3").hide();
                 $("#primary4").hide(); 
                 $("#primary5").show();
-                $("#txtKorisnik").prop('required', true);
+                //$("#txtKorisnik").prop('required', true);
                 $("#primary6").hide();
                 $("#primary7").hide();
                 $("#primary8").hide();
@@ -495,7 +683,7 @@
                 $("#primary4").hide(); 
                 $("#primary5").hide();
                 $("#primary6").show();
-                $("#txtGrad").prop('required', true);
+                //$("#txtGrad").prop('required', true);
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
@@ -510,7 +698,7 @@
                 $("#primary5").hide();
                 $("#primary6").hide();
                 $("#primary7").show();
-                $("#txtOrganizaciona").prop('required', true);
+                //$("#txtOrganizaciona").prop('required', true);
                 $("#primary8").hide();
                 $("#primary9").hide();
             });
@@ -525,7 +713,7 @@
                 $("#primary6").hide();
                 $("#primary7").hide(); 
                 $("#primary8").show();
-                $("#txtSluzba").prop('required', true);
+                //$("#txtSluzba").prop('required', true);
                 $("#primary9").hide();
             });
             $("#btnPrikaziDodadi9").click(function () {
@@ -540,7 +728,7 @@
                 $("#primary7").hide();
                 $("#primary8").hide(); 
                 $("#primary9").show();
-                $("#txtSektor").prop('required', true);
+                //$("#txtSektor").prop('required', true);
             });
         });
     </script>
@@ -604,14 +792,12 @@
                             <li class="divider-vertical"></li>
                             <li>
                                 <asp:Button ID="btnSifrarnici" runat="server" Text="Шифрарници" BackColor="Transparent" BorderStyle="None" ToolTip="Уредување на шифрарници" OnClick="btnSifrarnici_Click"></asp:Button></li>
-                            <li class="divider-vertical"></li>
-                            <li>
-                                <asp:Button ID="btnIstorijat" BackColor="Transparent" runat="server" BorderStyle="None" Text="Историјат" ToolTip="Историјат на промените" OnClick="btnIstorijat_Click"></asp:Button></li>
-                            <li class="divider-vertical"></li>
+                            
+                            
 
                         </ul>
                         <div style="float: right; display: inline;">
-                            <label id="lblUser" style="margin-top: 10px; float: left; margin-right: 5px;">User:</label>
+                            <label id="lblUser1" style="margin-top: 10px; float: left; margin-right: 5px;">User:</label>
                             <p style="float: left; display: inline; margin: 8px 5px 0 0; font-weight: bold;">
                                 <asp:Label ID="lblUser" runat="server" Visible="true"></asp:Label></p>
                             <p style="float: right; display: inline; margin: 5px 5px 0 0;">
@@ -638,7 +824,7 @@
              <div class="row">
 
                 <div class="col-lg-6 col-md-6 portfolio-item">
-                        <div style="min-height:20px;padding:19px;margin-bottom:20px;" class="text-center">
+                     <div style="min-height:20px;padding:19px;margin-bottom:20px;" class="text-center">
                         <button id="tipOprema" type="button" class="btn btn-hot text-uppercase btn-lg">Тип на опрема</button>
                         <button id="proizvoditel" type="button" class="btn btn-sunny text-uppercase btn-lg">Производител</button>
                         <button id="model" type="button" class="btn btn-fresh text-uppercase btn-lg">Модел</button>
@@ -705,9 +891,63 @@
                             </section>
                         </article>
                     </div>
-
-
-
+                 <div class="col-lg-6 col-md-6 portfolio-item">
+                     <asp:GridView ID="gvTipOprema" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvTipOprema_RowCancelingEdit" OnRowDeleting="gvTipOprema_RowDeleting" OnRowEditing="gvTipOprema_RowEditing" OnRowUpdating="gvTipOprema_RowUpdating">
+                         <Columns>
+                             <asp:BoundField DataField="ID_TipOprema" HeaderText="Број" ReadOnly="True" />
+                             <asp:BoundField DataField="TipOprema" HeaderText="Тип Опрема" />
+                             <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True" UpdateText="Внеси" HeaderText="Уреди" />
+                             <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" HeaderText="Избриши" />
+                         </Columns>
+                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                         <RowStyle BackColor="White" ForeColor="#003399" />
+                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                         <SortedDescendingHeaderStyle BackColor="#002876" />
+                     </asp:GridView>
+                 </div>
+                 <div class="col-lg-6 col-md-6 portfolio-item">
+                     <asp:GridView ID="gvProizvoditel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvProizvoditel_RowCancelingEdit" OnRowDeleting="gvProizvoditel_RowDeleting" OnRowEditing="gvProizvoditel_RowEditing" OnRowUpdating="gvProizvoditel_RowUpdating">
+                         <Columns>
+                             <asp:BoundField DataField="ID_Proizvoditel" HeaderText="ID" ReadOnly="True" />
+                             <asp:BoundField DataField="Proizvoditel" HeaderText="Производител" />
+                             <asp:CommandField CancelText="Откажи" EditText="Уреди" InsertText="Внеси" ShowEditButton="True" />
+                             <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                         </Columns>
+                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                         <RowStyle BackColor="White" ForeColor="#003399" />
+                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                         <SortedDescendingHeaderStyle BackColor="#002876" />
+                     </asp:GridView>
+                 </div>
+                 <div class="col-lg-6 col-md-6 portfolio-item">
+                     <asp:GridView ID="gvModel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvModel_RowCancelingEdit" OnRowDeleting="gvModel_RowDeleting" OnRowEditing="gvModel_RowEditing" OnRowUpdating="gvModel_RowUpdating">
+                         <Columns>
+                             <asp:BoundField DataField="ID_Model" HeaderText="ID" ReadOnly="True" />
+                             <asp:BoundField DataField="Model" HeaderText="Модел" />
+                             <asp:CommandField ShowEditButton="True" />
+                             <asp:CommandField ShowDeleteButton="True" />
+                         </Columns>
+                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                         <RowStyle BackColor="White" ForeColor="#003399" />
+                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                         <SortedDescendingHeaderStyle BackColor="#002876" />
+                     </asp:GridView>
+                 </div>
                 </div>
             </div>
 
@@ -723,7 +963,7 @@
                         </div>
                         <div class="modal-body">
                             <asp:Label ID="Label1" style="float:left;margin-right:5px;" runat="server" Text="Име Тип Опрема:"></asp:Label>
-                            <asp:TextBox ID="txtTipOprema" class="RemoveRequired" type="text" style="margin-top:-5px;" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTipOprema"  class="RemoveRequired" type="text" style="margin-top:-5px;" runat="server"></asp:TextBox>
                             <asp:Label ID="Label3" runat="server" Text="Изберете Производител:"></asp:Label>
                             <asp:DropDownList ID="ddlTipOpremaPROIZVODITEL" style="margin-top:5px;" runat="server" DataSourceID="SqlDataSource1" DataTextField="Proizvoditel" DataValueField="Proizvoditel"></asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Proizvoditel] FROM [PROIZVODITEL]"></asp:SqlDataSource>
@@ -750,7 +990,7 @@
                         </div>
                         <div class="modal-body">
                             <asp:Label ID="Label2" runat="server" Text="Име производител:"></asp:Label>
-                            <asp:TextBox ID="txtProizvoditel" class="RemoveRequired" type="text" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtProizvoditel"  class="RemoveRequired" type="text" runat="server"></asp:TextBox>
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="btnDodadiProzvoditel" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiProzvoditel_Click"  />
@@ -878,7 +1118,7 @@
                         </div>
                         <div class="modal-body">
                             <asp:Label ID="Label9" runat="server" Text="Град:"></asp:Label>
-                            <asp:TextBox ID="txtGrad" type="text" class="RemoveRequired" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtGrad"  type="text" class="RemoveRequired" runat="server"></asp:TextBox>
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="btnDodadiGrad" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiGrad_Click" />
@@ -943,13 +1183,13 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header modal-header-primary">
-                            <asp:Button ID="Button18" style="font-size: 20px; font-weight: bold; line-height: 20px; color: #000; text-shadow: 0 1px 0 #fff; opacity: .2;" class="close" data-dismiss="modal" aria-hidden="true" runat="server" Text="x" BackColor="Transparent" BorderStyle="None" Font-Size="Small" />
+                            <asp:Button ID="Button18" style="font-size: 20px; font-weight: bold; line-height: 20px; color: #000; text-shadow: 0 1px 0 #fff; opacity: .2;" class="close" data-dismiss="modal" aria-hidden="true" runat="server" Text="x" BackColor="Transparent" BorderStyle="None" Font-Size="Small"  />
                             <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>--%>
                             <h1><i class="glyphicon glyphicon-thumbs-up"></i>Додади: Сектор</h1>
                         </div>
                         <div class="modal-body">
                             <asp:Label ID="Label11" runat="server" Text="Сектор:"></asp:Label>
-                            <asp:TextBox ID="txtSektor" type="text" class="RemoveRequired" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtSektor"  type="text" class="RemoveRequired" runat="server"></asp:TextBox>
                         </div>
                         <div class="modal-footer">
                             <asp:Button ID="btnDodadiSektor" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiSektor_Click" />

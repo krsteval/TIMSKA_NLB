@@ -65,10 +65,9 @@
 						                    <li class="divider-vertical"></li>
 						                    <li id="Li1" runat="server"><asp:Button ID="btnsledi" runat="server"  BackColor="Transparent" Text="Следење на опремата" OnClick="btnsledi_Click" BorderStyle="None" /></li>
 						                    <li class="divider-vertical"></li>
-						                    <li><asp:Button ID="btnSifrarnici" BackColor="Transparent" runat="server"  BorderStyle="None" Text="Шифрарници" ToolTip="Уредување на шифрарници" ></asp:Button></li>
+						                    <li><asp:Button ID="btnSifrarnici" BackColor="Transparent" runat="server"  BorderStyle="None" Text="Шифрарници" ToolTip="Уредување на шифрарници" OnClick="btnSifrarnici_Click" ></asp:Button></li>
 						                    <li class="divider-vertical"></li>
-						                    <li><asp:Button ID="btnIstorijat" BackColor="Transparent" runat="server"  BorderStyle="None" Text="Историјат" ToolTip="Историјат на промените" OnClick="btnIstorijat_Click" ></asp:Button></li>
-                                            <li class="divider-vertical"></li>
+						                    
 							           
 						            </ul>
                                      <div style="float:right;display:inline;">
@@ -114,38 +113,25 @@
                                 <asp:TextBox ID="txtNabavnaCena1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaFaktura" runat="server">Број на фактура</asp:Label>
                                 <asp:TextBox ID="txtBrojNaFaktura1" runat="server" ReadOnly="True"></asp:TextBox>
+                                <asp:Label ID="lblDatumNaVnes1" runat="server">Датум на внес</asp:Label>
+                                <asp:TextBox ID="txtDatumNaVnes" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblDatumNaFaktura1" runat="server">Датум на фактура</asp:Label>
                                 <asp:TextBox ID="txtDatumNaFaktura" runat="server" ReadOnly="True"></asp:TextBox>
                         </div>
                         <div style="float:right">
                                 
                                 <asp:Label ID="lblStatus" runat="server">Статус</asp:Label>
-                                <%--<asp:TextBox ID="txtStatus" runat="server"></asp:TextBox>--%>
-                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Status" DataValueField="Status"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Status] FROM [STATUS]"></asp:SqlDataSource>
+                                <asp:TextBox ID="txtStatus" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblKorisnik" runat="server">Корисник</asp:Label>
-                                <%--<asp:TextBox ID="txtKorisnik" runat="server"></asp:TextBox>--%>
-                                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="Korisnik" DataValueField="Korisnik"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Korisnik] FROM [KORISNIK]"></asp:SqlDataSource>
+                                <asp:TextBox ID="txtKorisnik" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblGrad" runat="server">Град</asp:Label>
-<%--                                <asp:TextBox ID="txtGrad" runat="server"></asp:TextBox>--%>
-                                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="Grad" DataValueField="Grad"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Grad] FROM [GRAD]"></asp:SqlDataSource>
+                                <asp:TextBox ID="txtGrad" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblOrganizacionaEdinica" runat="server">Организациона Единица</asp:Label>
-                                <%--<asp:TextBox ID="txtOrganizacionaEdinica" runat="server"></asp:TextBox>--%>
-                                <asp:DropDownList ID="DropDownList4" DataSourceID="SqlDataSource4"  DataTextField="OrganizacionaEdinica" DataValueField="OrganizacionaEdinica" runat="server"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [OrganizacionaEdinica] FROM [ORGANIZACIONA_EDINICA]"></asp:SqlDataSource>
-                               
+                                <asp:TextBox ID="txtOrganizacionaEdinica" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblSluzba" runat="server">Служба</asp:Label>
-                                <%--<asp:TextBox ID="txtSluzba" runat="server"></asp:TextBox>--%>
-                                <asp:DropDownList ID="DropDownList5" DataSourceID="SqlDataSource5" runat="server"  DataTextField="Sluzba" DataValueField="Sluzba" ></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sluzba] FROM [SLUZBA]"></asp:SqlDataSource>
-                               
+                                <asp:TextBox ID="txtSluzba" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblSektor" runat="server">Сектор</asp:Label>
-                                <%--<asp:TextBox ID="txtSektor" runat="server"></asp:TextBox>--%>
-                                 <asp:DropDownList ID="DropDownList6" DataSourceID="SqlDataSource6" runat="server" DataTextField="Sektor" DataValueField="Sektor"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sektor] FROM [SEKTOR]"></asp:SqlDataSource>
-                               
+                                <asp:TextBox ID="txtSektor" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaBaranje" runat="server">Број на барање</asp:Label>
                                 <asp:TextBox ID="txtBrojNaBaranje1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblBrojNaNalog" runat="server">Број на налог</asp:Label>
@@ -155,7 +141,7 @@
                                 <asp:Label ID="lblBrojCheckLista" runat="server">Број на Check листа</asp:Label>
                                 <asp:TextBox ID="txtBrojCheckLista1" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:Label ID="lblZabeleska" runat="server">Забелешка</asp:Label>
-                                <asp:TextBox ID="txtZabeleska1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtZabeleska1" runat="server" ReadOnly="True"></asp:TextBox>
                         </div>    
                 </p>
                 <div>

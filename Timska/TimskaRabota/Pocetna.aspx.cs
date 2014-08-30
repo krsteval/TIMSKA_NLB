@@ -158,26 +158,29 @@ public partial class Pocetna : System.Web.UI.Page
             string brojfaktura = selectedRow.Cells[10].Text;
             txtBrojNaFaktura1.Text = brojfaktura;
 
+            string datumvnes = selectedRow.Cells[11].Text;
+            txtDatumNaVnes.Text=datumvnes;
+
             string datumfaktura = selectedRow.Cells[12].Text;
             txtDatumNaFaktura.Text = datumfaktura;
 
-            //string status = selectedRow.Cells[13].Text;
-            //txtStatus.Text = status;
+            string status = selectedRow.Cells[13].Text;
+            txtStatus.Text = status;
 
-            //string korisnik = selectedRow.Cells[14].Text;
-            //txtKorisnik.Text = korisnik;
+            string korisnik = selectedRow.Cells[14].Text;
+            txtKorisnik.Text = korisnik;
 
-            //string grad = selectedRow.Cells[15].Text;
-            //txtGrad.Text = grad;
+            string grad = selectedRow.Cells[15].Text;
+            txtGrad.Text = grad;
 
-            //string organizaciona = selectedRow.Cells[16].Text;
-            //txtOrganizacionaEdinica.Text = organizaciona;
+            string organizaciona = selectedRow.Cells[16].Text;
+            txtOrganizacionaEdinica.Text = organizaciona;
 
-            //string sluzba = selectedRow.Cells[17].Text;
-            //txtSluzba.Text = sluzba;
+            string sluzba = selectedRow.Cells[17].Text;
+            txtSluzba.Text = sluzba;
 
-            //string sektor = selectedRow.Cells[18].Text;
-            //txtSektor.Text = sektor;
+            string sektor = selectedRow.Cells[18].Text;
+            txtSektor.Text = sektor;
 
             string brojbaranje = selectedRow.Cells[19].Text;
             txtBrojNaBaranje1.Text = brojbaranje;
@@ -235,22 +238,22 @@ public partial class Pocetna : System.Web.UI.Page
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
 
         // TextBox tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[13].Controls[0];
-        komanda.Parameters.AddWithValue("@Status", DropDownList1.SelectedItem.Value);
+        komanda.Parameters.AddWithValue("@Status", txtStatus.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[14].Controls[0];
-        komanda.Parameters.AddWithValue("@Korisnik", DropDownList2.SelectedItem.Value);
+        komanda.Parameters.AddWithValue("@Korisnik", txtKorisnik.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[15].Controls[0];
-        komanda.Parameters.AddWithValue("@Grad", DropDownList3.SelectedItem.Value);
+        komanda.Parameters.AddWithValue("@Grad", txtGrad.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[16].Controls[0];
-        komanda.Parameters.AddWithValue("@OrganizacionaEdinica", DropDownList4.SelectedIndex+1);
+        komanda.Parameters.AddWithValue("@OrganizacionaEdinica", txtOrganizacionaEdinica.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[17].Controls[0];
-        komanda.Parameters.AddWithValue("@Sluzba", DropDownList5.SelectedItem.Value);
+        komanda.Parameters.AddWithValue("@Sluzba", txtSluzba.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[18].Controls[0];
-        komanda.Parameters.AddWithValue("@Sektor", DropDownList6.SelectedItem.Value);
+        komanda.Parameters.AddWithValue("@Sektor", txtSektor.Text);
 
         //tb = (TextBox)gvPromena.Rows[e.RowIndex].Cells[23].Controls[0];
         komanda.Parameters.AddWithValue("@Zabeleska", txtZabeleska1.Text);
@@ -277,8 +280,9 @@ public partial class Pocetna : System.Web.UI.Page
             IspolniMaster();
         divThankYou.Visible = false;
     }
-    protected void btnIstorijat_Click(object sender, EventArgs e)
+
+    protected void btnSifrarnici_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Istorijat.aspx");
+        Response.Redirect("Sifrarnici.aspx");
     }
 }
