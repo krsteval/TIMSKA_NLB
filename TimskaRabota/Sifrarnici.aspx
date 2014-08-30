@@ -255,8 +255,11 @@
             $("#btnPrikaziDodadi7").hide();
             $("#btnPrikaziDodadi8").hide();
             $("#btnPrikaziDodadi9").hide();
-            
 
+            $("#btnUredi1").hide();
+            $("#btnUredi2").hide();
+            $("#btnUredi3").hide();
+            
             //$("#btnIzgasiModalen").click(function () {
 
             //    $(".RemoveRequired").prop('required', false);
@@ -268,6 +271,7 @@
             $("#tipOprema").click(function () {
                 $("#ddlTipOprema").show();
                 $("#btnPrikaziDodadi").show();
+                $("#btnUredi1").show();
                 $("#ddlProizvoditel").hide();
                 $("#btnPrikaziDodadi1").hide();
                 $("#ddlModel").hide();
@@ -297,11 +301,14 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
 
             $("#proizvoditel").click(function () {
                 $("#ddlProizvoditel").show();
                 $("#btnPrikaziDodadi1").show();
+                $("#btnUredi2").show();
                 $("#btnPrikaziDodadi").hide();
                 $("#ddlTipOprema").hide();
                 $("#ddlModel").hide();
@@ -331,6 +338,8 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi3").hide();
             });
 
             $("#model").click(function () {
@@ -354,6 +363,7 @@
                 $("#btnPrikaziDodadi6").hide();
                 $("#ddlModel").show();
                 $("#btnPrikaziDodadi2").show();
+                $("#btnUredi3").show();
                 $("#primary").hide();
                 $("#primary1").hide();
                 $("#primary2").hide();
@@ -364,6 +374,8 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
             });
             $("#dobavuvac").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -396,6 +408,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#status").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -428,6 +443,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#korisnik").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -460,6 +478,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#grad").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -492,6 +513,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#organizaciona").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -524,6 +548,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#sluzba").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -556,6 +583,9 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
             });
             $("#sektor").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -732,7 +762,6 @@
             });
         });
     </script>
-
     <style type="text/css">
         h2{
             margin: 0;     
@@ -864,91 +893,15 @@
                                 <asp:Button ID="btnPrikaziDodadi7" class="btn btn-primary" href="#primary7" style="margin-top: -10px;" data-toggle="modal" runat="server" Text="Додади" />
                                 <asp:Button ID="btnPrikaziDodadi8" class="btn btn-primary" href="#primary8" style="margin-top: -10px;" data-toggle="modal" runat="server" Text="Додади" />
                                 <asp:Button ID="btnPrikaziDodadi9" class="btn btn-primary" href="#primary9" style="margin-top: -10px;" data-toggle="modal" runat="server" Text="Додади" />
+                                <asp:Button ID="btnUredi1" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi1_Click" />
+                                <asp:Button ID="btnUredi2" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi2_Click" />
+                                <asp:Button ID="btnUredi3" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi3_Click" />
                                 
-                                <%--<asp:DropDownList ID="ddlTipModeli" runat="server" DataSourceID="SqlDataSource1" DataTextField="TipOprema" DataValueField="TipOprema" OnSelectedIndexChanged="ddlTipModeli_SelectedIndexChanged"  ></asp:DropDownList>
-                                --%>
-
-                                <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [TipOprema] FROM [TipOprema] ORDER BY [ID_TipOprema]"></asp:SqlDataSource>--%>
-                                <%--<asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Model" DataValueField="Model"></asp:ListBox>--%>                <%--<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT m.Model FROM MODEL AS m INNER JOIN TipOprema AS t ON m.ID_TipOprema = t.ID_TipOprema"></asp:SqlDataSource>--%>
-                                <%--<asp:Button ID="btnPrikazi" class="btn btn-info" runat="server" Text="Прикажи"  />--%>
-                                <%--<asp:ListBox ID="lsbTipOprema" runat="server" DataSourceID="SqlDataSource3" DataTextField="TipOprema" DataValueField="TipOprema" ></asp:ListBox>--%>                <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [TipOprema] FROM [TipOprema]"></asp:SqlDataSource>--%>
-                            
-                           
-                         <%--       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
-                                    <Columns>
-                                        <asp:BoundField DataField="Model" HeaderText="MODEL" />
-                                    </Columns>
-                                    <FooterStyle BackColor="White" ForeColor="#000066" />
-                                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                                    <RowStyle ForeColor="#000066" />
-                                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                    <SortedDescendingHeaderStyle BackColor="#00547E" />
-                                </asp:GridView>--%>
                                 <br />
                             </section>
                         </article>
                     </div>
-                 <div class="col-lg-6 col-md-6 portfolio-item">
-                     <asp:GridView ID="gvTipOprema" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvTipOprema_RowCancelingEdit" OnRowDeleting="gvTipOprema_RowDeleting" OnRowEditing="gvTipOprema_RowEditing" OnRowUpdating="gvTipOprema_RowUpdating">
-                         <Columns>
-                             <asp:BoundField DataField="ID_TipOprema" HeaderText="Број" ReadOnly="True" />
-                             <asp:BoundField DataField="TipOprema" HeaderText="Тип Опрема" />
-                             <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True" UpdateText="Внеси" HeaderText="Уреди" />
-                             <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" HeaderText="Избриши" />
-                         </Columns>
-                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                         <RowStyle BackColor="White" ForeColor="#003399" />
-                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                         <SortedDescendingHeaderStyle BackColor="#002876" />
-                     </asp:GridView>
-                 </div>
-                 <div class="col-lg-6 col-md-6 portfolio-item">
-                     <asp:GridView ID="gvProizvoditel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvProizvoditel_RowCancelingEdit" OnRowDeleting="gvProizvoditel_RowDeleting" OnRowEditing="gvProizvoditel_RowEditing" OnRowUpdating="gvProizvoditel_RowUpdating">
-                         <Columns>
-                             <asp:BoundField DataField="ID_Proizvoditel" HeaderText="ID" ReadOnly="True" />
-                             <asp:BoundField DataField="Proizvoditel" HeaderText="Производител" />
-                             <asp:CommandField CancelText="Откажи" EditText="Уреди" InsertText="Внеси" ShowEditButton="True" />
-                             <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
-                         </Columns>
-                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                         <RowStyle BackColor="White" ForeColor="#003399" />
-                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                         <SortedDescendingHeaderStyle BackColor="#002876" />
-                     </asp:GridView>
-                 </div>
-                 <div class="col-lg-6 col-md-6 portfolio-item">
-                     <asp:GridView ID="gvModel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvModel_RowCancelingEdit" OnRowDeleting="gvModel_RowDeleting" OnRowEditing="gvModel_RowEditing" OnRowUpdating="gvModel_RowUpdating">
-                         <Columns>
-                             <asp:BoundField DataField="ID_Model" HeaderText="ID" ReadOnly="True" />
-                             <asp:BoundField DataField="Model" HeaderText="Модел" />
-                             <asp:CommandField ShowEditButton="True" />
-                             <asp:CommandField ShowDeleteButton="True" />
-                         </Columns>
-                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                         <RowStyle BackColor="White" ForeColor="#003399" />
-                         <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                         <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                         <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                         <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                         <SortedDescendingHeaderStyle BackColor="#002876" />
-                     </asp:GridView>
-                 </div>
+                 
                 </div>
             </div>
 
