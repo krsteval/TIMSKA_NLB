@@ -31,6 +31,8 @@
 <img src="http://i.imgur.com/E1agBne.png" alt="Start Screen"/><br />
 <br/>
 <img src="http://i.imgur.com/YFhlgJi.png" alt="Start Screen"/><br />
+	Овозможена е опција на така наречен advanced search, каде дополнително, покрај внесените клучни зборови може да избере некои од предифинираните шифрарници.
+<img src="http://i.imgur.com/DO8cnBR.png" alt="Start Screen"/><br />
 * * *
 #Admin мод
    Администраторот<i>(Admin мод)</i> има за цел да врши преглед на опремата, да ја уредува, контролира истата, да врши промени, да додава нова опрема како и да уредува шифрарници.
