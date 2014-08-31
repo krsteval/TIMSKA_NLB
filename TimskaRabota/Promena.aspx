@@ -222,13 +222,13 @@
                 </div>            
             </div>
             </div>
-            <div style="padding: 5px; margin-left: 0px; margin-top: 70px;" class="col-lg-12">
+            <div style="padding: 5px; margin-left: 10px; margin-top: 70px;" class="col-lg-12">
                 <asp:TextBox ID="txtPrebaraj" runat="server"></asp:TextBox>
                 <asp:Button ID="btnPrebaraj" style=" border-radius: 5px; margin-top: -10px;" class="btn-success" runat="server" OnClick="btnPrebaraj_Click" Text="Пребарај" />
                 <asp:Button ID="bntAdvancedSearch" style="border-radius: 5px; margin-top: -10px;" class="btn btn-fresh" runat="server" Text="+" OnClick="btnAdvancedSearch_Click" />
             </div>
 
-            <div id="advancedSearch" style="border:1px solid black; border-radius:3px; width:250px; margin-left:10px; padding: 10px 0px 10px 10px;" runat="server" visible="False">
+            <div id="advancedSearch" style="border:1px solid black; border-radius:3px;float:left; width:250px; margin-left:10px; padding: 10px 0px 10px 10px;" runat="server" visible="False">
                 
                 <label for="tip_oprema">Тип на Опрема</label>
                 <asp:CheckBox ID="checkTipOprema" runat="server" />

@@ -146,7 +146,7 @@
                 </p>
                 <div>
                     <asp:Label ID="lblPomosnaID" runat="server" Text=" " style="margin-top:-20px;position:absolute;color:transparent;" Font-Size="XX-Small" ></asp:Label>
-                    <asp:Button ID="Zacuvaj"  class="btn btn-success" runat="server" Text="Зачувај" OnClick="Zacuvaj_Click" />
+                    <!--<asp:Button ID="Zacuvaj"  class="btn btn-success" runat="server" Text="Зачувај" OnClick="Zacuvaj_Click" />-->
                 </div>              
             </div>
 
@@ -155,9 +155,76 @@
 				                <asp:TextBox ID="txtPrebaraj" runat="server"></asp:TextBox>
                                 <asp:Button ID="btnPrebaraj" style="border-radius:5px;margin-top:-10px;" class="btn-success"  runat="server" onclick="btnPrebaraj_Click" 
                                     Text="Пребарај" />
+                                    <asp:Button ID="bntAdvancedSearch" style="border-radius: 5px; margin-top: -10px;" class="btn btn-fresh" runat="server" Text="+" OnClick="btnAdvancedSearch_Click" />
+
                             </div>
             </div>
-         <div  style="display:inline;padding:10px">
+
+            <div id="advancedSearch" style="border:1px solid black; border-radius:3px; width:250px; margin-left:10px; padding: 10px 0px 10px 10px;" runat="server" visible="False">
+                
+                <label for="tip_oprema">Тип на Опрема</label>
+                <asp:CheckBox ID="checkTipOprema" runat="server" />
+                <asp:DropDownList ID="asTipOprema" runat="server" DataSourceID="SqlDataSource7" DataTextField="TipOprema" DataValueField="TipOprema" ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [TipOprema] FROM [TipOprema]"></asp:SqlDataSource>
+                
+                <label for="proizvoditel">Производител</label>
+                <asp:CheckBox ID="checkProizvoditel" runat="server" />
+                <asp:DropDownList ID="asProizvoditel" runat="server" DataSourceID="SqlDataSource8" DataTextField="Proizvoditel" DataValueField="Proizvoditel"  ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Proizvoditel] FROM [PROIZVODITEL]"></asp:SqlDataSource>
+                
+                <label for="model">Модел</label>
+                <asp:CheckBox ID="checkModel" runat="server" />
+                <asp:DropDownList ID="asModel" runat="server" DataSourceID="SqlDataSource9" DataTextField="Model" DataValueField="Model"  ></asp:DropDownList> 
+                <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Model] FROM [MODEL]"></asp:SqlDataSource>
+                            
+                <label for="txtBrojProdukt">Број на Продукт</label> 
+                <asp:CheckBox ID="checkBrojProdukt" runat="server" />
+                <asp:TextBox ID="asBrojProduct" name="txtBrojProdukt"  runat="server" type="text" placeholder="Број на Продукт"></asp:TextBox>
+                
+                <label for="dobavuvac">Добавувач</label>
+                <asp:CheckBox ID="checkDobavuvac" runat="server" />
+                <asp:DropDownList ID="asDobavuvac" runat="server" type="text"  placeholder="Добавувач" DataSourceID="SqlDataSource10" DataTextField="Dobavuvac" DataValueField="Dobavuvac"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Dobavuvac] FROM [DOBAVUVAC]"></asp:SqlDataSource>
+
+                <label for="nabavna_cena">Набавна Цена</label>
+                <asp:CheckBox ID="checkNabavnaCena" runat="server" />
+                <asp:TextBox ID="asNabavnaCena" runat="server" type="number"  placeholder="Набавна Цена"></asp:TextBox>
+                              
+                <label for="status">Статус</label>
+                <asp:CheckBox ID="checkStatus" runat="server" />
+                <asp:DropDownList ID="asStatus" runat="server" DataSourceID="SqlDataSource11" DataTextField="Status" DataValueField="Status" ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Status] FROM [STATUS]"></asp:SqlDataSource>
+
+                <label for="korisnik">Корисник</label>
+                <asp:CheckBox ID="checkKorisnik" runat="server" />
+                <asp:DropDownList ID="asKorisnik" runat="server" DataSourceID="SqlDataSource12" DataTextField="Korisnik" DataValueField="Korisnik"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Korisnik] FROM [KORISNIK]"></asp:SqlDataSource>
+                
+                <label for="grad">Град</label>
+                <asp:CheckBox ID="checkGrad" runat="server" />
+                <asp:DropDownList ID="asGrad" runat="server" DataSourceID="SqlDataSource13" DataTextField="Grad" DataValueField="Grad" ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Grad] FROM [GRAD]"></asp:SqlDataSource>
+                
+                <label for="organizaciona_edinica">Организациона Единица</label>
+                <asp:CheckBox ID="checkOrganizacionaEdinica" runat="server" />
+                <asp:DropDownList ID="asOrganizacionaEdinica" runat="server"  DataSourceID="SqlDataSource14" DataTextField="OrganizacionaEdinica" DataValueField="OrganizacionaEdinica"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource14" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [OrganizacionaEdinica] FROM [ORGANIZACIONA_EDINICA]"></asp:SqlDataSource>
+                                        
+                <label for="sluzba">Служба</label>
+                <asp:CheckBox ID="checkSluzba" runat="server" />
+                <asp:DropDownList ID="asSluzba" runat="server" DataSourceID="SqlDataSource15" DataTextField="Sluzba" DataValueField="Sluzba" ></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource15" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sluzba] FROM [SLUZBA]"></asp:SqlDataSource>
+   
+                <label for="sektor">Сектор</label>
+                <asp:CheckBox ID="checkSektor" runat="server" />
+                <asp:DropDownList ID="asSektor" runat="server" DataSourceID="SqlDataSource16" DataTextField="Sektor" DataValueField="Sektor"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sektor] FROM [SEKTOR]"></asp:SqlDataSource>
+
+                <asp:Button ID="btnNaprednoPrebaruvanje" runat="server"  style="border-radius:5px;margin-left:35px;" class="btn-success" Text="Напредно Пребарување" OnClick="btnNaprednoPrebaruvanje_Click" ToolTip="Мора да селектирате барем едно!" />
+            </div>
+
+
+            <div  style="display:inline;padding:10px">
                                         <asp:GridView ID="gvOpis" runat="server" 
                                         AutoGenerateColumns="False" CellPadding="3" 
                     BackColor="White" BorderColor="#E7E7FF"   Width="1200px"
@@ -206,14 +273,17 @@
                                     </asp:GridView>
                     </div>
 
+                    <div style="clear: both;">
+                          <p>
+                              <asp:Button ID="btnVrati" runat="server" onclick="btnVrati_Click" class="btn btn-success" Text="Врати Претходна Состојба" Visible="False" />
+                          </p>
+                    </div>
+
         <div style="padding:10px">
              <asp:Label ID="lblPoraka" runat="server"></asp:Label>
         
         </div>
-        <div id="footer">
-	        <p>&copy; 2013 Sitename.com. | Photos by FINKI<a href="http://finki.ukim.mk/"></a> | Design by TIMSKA</p>
-        </div>
-        <!-- end #footer -->
+        
 
     </form>
 </body>

@@ -105,6 +105,7 @@ public partial class Pocetna : System.Web.UI.Page
         {
             konekcija.Close();
         }
+        btnVrati.Visible = true;
     }
     protected void btnpocetna_Click(object sender, EventArgs e)
     {
@@ -285,4 +286,122 @@ public partial class Pocetna : System.Web.UI.Page
     {
         Response.Redirect("Sifrarnici.aspx");
     }
+    protected void btnAdvancedSearch_Click(object sender, EventArgs e)
+    {
+        advancedSearch.Visible = true;
+    }
+    protected void btnNaprednoPrebaruvanje_Click(object sender, EventArgs e)
+    {
+        string prebarano = " ";
+
+        if (checkTipOprema.Checked)
+        {
+            string pomosen = asTipOprema.SelectedItem.Value;
+            prebarano += " (TipOprema LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkProizvoditel.Checked)
+        {
+            string pomosen = asProizvoditel.SelectedItem.Value.ToString();
+            prebarano += " (Proizvoditel LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkModel.Checked)
+        {
+            string pomosen = asModel.SelectedItem.Value;
+            prebarano += " (Model LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkBrojProdukt.Checked)
+        {
+            if (asBrojProduct.Text != "")
+            {
+                string pomosen = asBrojProduct.Text;
+                prebarano += " (BrojProdukt LIKE '%" + pomosen.Trim() + "%') AND";
+            }
+        }
+        if (checkDobavuvac.Checked)
+        {
+            string pomosen = asDobavuvac.SelectedItem.Value;
+            prebarano += " (Dobavuvac LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkNabavnaCena.Checked)
+        {
+            if (asNabavnaCena.Text != "")
+            {
+                string pomosen = asNabavnaCena.Text;
+                prebarano += " (NabavnaCena LIKE '%" + pomosen.Trim() + "%') AND";
+            }
+        }
+        if (checkStatus.Checked)
+        {
+            string pomosen = asStatus.SelectedItem.Value;
+            prebarano += " (Status LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkKorisnik.Checked)
+        {
+            btnNaprednoPrebaruvanje.Enabled = true;
+            string pomosen = asKorisnik.SelectedItem.Value;
+            prebarano += " (Korisnik LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkGrad.Checked)
+        {
+            string pomosen = asGrad.SelectedItem.Value.ToString();
+            prebarano += " (Grad LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkOrganizacionaEdinica.Checked)
+        {
+            string pomosen = asOrganizacionaEdinica.SelectedItem.Value;
+            prebarano += " (OrganizacionaEdinica LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkSluzba.Checked)
+        {
+            string pomosen = asSluzba.SelectedItem.Value;
+            prebarano += " (Sluzba LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+        if (checkSektor.Checked)
+        {
+            string pomosen = asSektor.SelectedItem.Value;
+            prebarano += " (Sektor LIKE '%" + pomosen.Trim() + "%') AND";
+        }
+
+        string konecen = "";
+        if (prebarano != " ")
+        {
+            konecen = prebarano.Substring(0, prebarano.Length - 4);
+        }
+
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM OPIS WHERE " + konecen + " ";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Proizvodi");
+            gvOpis.DataSource = ds;
+            gvOpis.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+        gvOpis.Visible = true;
+        advancedSearch.Visible = false;
+        btnVrati.Visible = true;
+
+    }
+    protected void btnVrati_Click(object sender, EventArgs e)
+    {
+        gvOpis.Visible = true;
+        IspolniMaster();
+        btnVrati.Visible = false;
+        
+    }
+
 }

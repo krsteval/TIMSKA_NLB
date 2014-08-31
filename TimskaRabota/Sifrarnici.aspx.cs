@@ -954,16 +954,1030 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         Response.Redirect("Sifrarnici.aspx");
     }
 
+    protected void gvTipOprema_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE TipOprema SET TipOprema=@TipOprema WHERE ID_TipOprema=@ID_TipOprema";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvTipOprema.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@TipOprema", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_TipOprema", gvTipOprema.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvTipOprema.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniSifrarnici();
+    }
+    protected void gvTipOprema_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvTipOprema.EditIndex = e.NewEditIndex;
+        gvTipOprema.DataSource = ds;
+        gvTipOprema.DataBind();
+    }
+    protected void gvTipOprema_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvTipOprema.EditIndex = -1;
+        gvTipOprema.DataSource = ds;
+        gvTipOprema.DataBind();
+    }
+    protected void gvTipOprema_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvTipOprema.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM TipOprema WHERE ID_TipOprema= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniSifrarnici();
+    }
+    protected void gvProizvoditel_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvProizvoditel.EditIndex = e.NewEditIndex;
+        gvProizvoditel.DataSource = ds;
+        gvProizvoditel.DataBind();
+    }
+    protected void gvProizvoditel_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvProizvoditel.EditIndex = -1;
+        gvProizvoditel.DataSource = ds;
+        gvProizvoditel.DataBind();
+    }
+    protected void gvProizvoditel_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE PROIZVODITEL SET Proizvoditel=@Proizvoditel WHERE ID_Proizvoditel=@ID_Proizvoditel";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvProizvoditel.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Proizvoditel", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Proizvoditel", gvProizvoditel.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvProizvoditel.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniSifrarnici1();
+    }
+    protected void gvProizvoditel_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvProizvoditel.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM PROIZVODITEL WHERE ID_Proizvoditel= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniSifrarnici1();
+    }
+    protected void gvModel_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvModel.EditIndex = e.NewEditIndex;
+        gvModel.DataSource = ds;
+        gvModel.DataBind();
+    }
+    protected void gvModel_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE MODEL SET Model=@Model WHERE ID_Model=@ID_Model";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvModel.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Model", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Model", gvModel.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvModel.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniSifrarnici2();
+    }
+    protected void gvModel_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvModel.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM MODEL WHERE ID_Model= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniSifrarnici2();
+    }
+    protected void gvModel_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvModel.EditIndex = -1;
+        gvModel.DataSource = ds;
+        gvModel.DataBind();
+    }
+
+
+    //Go ispolnuva gridot so Tip Oprema
+    protected void IspolniSifrarnici()
+    {
+        // x = tipOprema + 1;
+        //lblPoraka.Text = x.ToString();
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM TipOprema ORDER BY ID_TipOprema";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Model");
+            gvTipOprema.DataSource = ds;
+            gvTipOprema.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+
+    
+    //Go ispolnuva gridot so Proizvoditeli
+    protected void IspolniSifrarnici1()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM PROIZVODITEL ORDER BY ID_Proizvoditel";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Model");
+            gvProizvoditel.DataSource = ds;
+            gvProizvoditel.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Modeli
+    protected void IspolniSifrarnici2()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM MODEL ORDER BY ID_Model";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Model");
+            gvModel.DataSource = ds;
+            gvModel.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    
+    //Go ispolnuva gridot so Dobavuvaci
+    protected void IspolniDobavuvaci()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM DOBAVUVAC ORDER BY ID_Dobavuvac";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Dobavuvac");
+            gvDobavuvac.DataSource = ds;
+            gvDobavuvac.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Statusi
+    protected void IspolniStatusi()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM STATUS ORDER BY ID_Status";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Status");
+            gvStatus.DataSource = ds;
+            gvStatus.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Korisnici
+    protected void IspolniKorisnici()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM KORISNIK ORDER BY ID_Korisnik";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Korisnik");
+            gvKorisnik.DataSource = ds;
+            gvKorisnik.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Gradovi
+    protected void IspolniGradovi()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM GRAD ORDER BY ID_Grad";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Grad");
+            gvGrad.DataSource = ds;
+            gvGrad.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Organizaciona Edinica
+    protected void IspolniOrganizaciona()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM ORGANIZACIONA_EDINICA ORDER BY ID_Edinica";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Organizaciona");
+            gvOrganizacionaEdinica.DataSource = ds;
+            gvOrganizacionaEdinica.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Sluzbi
+    protected void IspolniSluzbi()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM SLUZBA ORDER BY ID_Sluzba";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Sluzba");
+            gvSluzba.DataSource = ds;
+            gvSluzba.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+    //Go ispolnuva gridot so Sektor
+    protected void IspolniSektori()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "SELECT * FROM SEKTOR ORDER BY ID_Sektor";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Sektor");
+            gvSektor.DataSource = ds;
+            gvSektor.DataBind();
+            ViewState["dataset"] = ds;
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+    }
+
+    protected void tipOprema_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = true;
+        IspolniSifrarnici();
+    }
+
+    
+
     protected void btnUredi1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("TipOprema.aspx");
+        divTipOprema.Visible = true;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniSifrarnici();
     }
     protected void btnUredi2_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Proizvoditel.aspx");
+        
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = true;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniSifrarnici1();
     }
     protected void btnUredi3_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Model.aspx");
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = true;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniSifrarnici2();
+    }
+    protected void btnUredi4_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = true;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniDobavuvaci();
+    }
+    protected void btnUredi5_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = true;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniStatusi();
+    }
+    protected void btnUredi6_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = true;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniKorisnici();
+    }
+    protected void btnUredi7_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = true;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniGradovi();
+    }
+    protected void btnUredi8_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = true;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        IspolniOrganizaciona();
+    }
+    protected void btnUredi9_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = true;
+        divSektor.Visible = false;
+        IspolniSluzbi();
+    }
+    protected void btnUredi10_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = true;
+        IspolniSektori();
+    }
+    protected void gvDobavuvac_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvDobavuvac.EditIndex = -1;
+        gvDobavuvac.DataSource = ds;
+        gvDobavuvac.DataBind();
+    }
+    protected void gvDobavuvac_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvDobavuvac.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM DOBAVUVAC WHERE ID_Dobavuvac= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniDobavuvaci();
+    }
+    protected void gvDobavuvac_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvDobavuvac.EditIndex = e.NewEditIndex;
+        gvDobavuvac.DataSource = ds;
+        gvDobavuvac.DataBind();
+    }
+    protected void gvDobavuvac_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE DOBAVUVAC SET Dobavuvac=@Dobavuvac WHERE ID_Dobavuvac=@ID_Dobavuvac";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvDobavuvac.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Dobavuvac", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Dobavuvac", gvDobavuvac.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvDobavuvac.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniDobavuvaci();
+    }
+    protected void gvStatus_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvStatus.EditIndex = -1;
+        gvStatus.DataSource = ds;
+        gvStatus.DataBind();
+    }
+    protected void gvStatus_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvStatus.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM STATUS WHERE ID_Status= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniStatusi();
+    }
+    protected void gvStatus_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvStatus.EditIndex = e.NewEditIndex;
+        gvStatus.DataSource = ds;
+        gvStatus.DataBind();
+    }
+    protected void gvStatus_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE STATUS SET Status=@Status WHERE ID_Status=@ID_Status";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvStatus.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Status", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Status", gvStatus.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvStatus.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniStatusi();
+    }
+    protected void gvKorisnik_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvKorisnik.EditIndex = -1;
+        gvKorisnik.DataSource = ds;
+        gvKorisnik.DataBind();
+    }
+    protected void gvKorisnik_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+
+    }
+    protected void gvKorisnik_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvKorisnik.EditIndex = e.NewEditIndex;
+        gvKorisnik.DataSource = ds;
+        gvKorisnik.DataBind();
+    }
+    protected void gvKorisnik_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE KORISNIK SET Korisnik=@Korisnik WHERE ID_Korisnik=@ID_Korisnik";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvKorisnik.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Korisnik", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Korisnik", gvKorisnik.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvKorisnik.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniKorisnici();
+    }
+    protected void gvGrad_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvGrad.EditIndex = -1;
+        gvGrad.DataSource = ds;
+        gvGrad.DataBind();
+    }
+    protected void gvGrad_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvGrad.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM GRAD WHERE ID_Grad= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniGradovi();
+    }
+    protected void gvGrad_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvGrad.EditIndex = e.NewEditIndex;
+        gvGrad.DataSource = ds;
+        gvGrad.DataBind();
+    }
+    protected void gvGrad_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE GRAD SET Grad=@Grad WHERE ID_Grad=@ID_Grad";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvGrad.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Grad", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Grad", gvGrad.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvGrad.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniGradovi();
+    }
+    protected void gvOrganizacionaEdinica_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvOrganizacionaEdinica.EditIndex = -1;
+        gvOrganizacionaEdinica.DataSource = ds;
+        gvOrganizacionaEdinica.DataBind();
+    }
+    protected void gvOrganizacionaEdinica_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvOrganizacionaEdinica.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM ORGANIZACIONA_EDINICA WHERE ID_Edinica= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniOrganizaciona();
+
+    }
+    protected void gvOrganizacionaEdinica_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvOrganizacionaEdinica.EditIndex = e.NewEditIndex;
+        gvOrganizacionaEdinica.DataSource = ds;
+        gvOrganizacionaEdinica.DataBind();
+    }
+    protected void gvOrganizacionaEdinica_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE ORGANIZACIONA_EDINICA SET OrganizacionaEdinica=@OrganizacionaEdinica WHERE ID_Edinica=@ID_Edinica";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvOrganizacionaEdinica.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@OrganizacionaEdinica", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Edinica", gvOrganizacionaEdinica.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvOrganizacionaEdinica.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniOrganizaciona();
+    }
+    protected void gvSluzba_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvSluzba.EditIndex = -1;
+        gvSluzba.DataSource = ds;
+        gvSluzba.DataBind();
+    }
+    protected void gvSluzba_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvSluzba.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM SLUZBA WHERE ID_Sluzba= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniSluzbi();
+    }
+    protected void gvSluzba_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvSluzba.EditIndex = e.NewEditIndex;
+        gvSluzba.DataSource = ds;
+        gvSluzba.DataBind();
+    }
+    protected void gvSluzba_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE SLUZBA SET Sluzba=@Sluzba WHERE ID_Sluzba=@ID_Sluzba";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvSluzba.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Sluzba", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Sluzba", gvSluzba.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvSluzba.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniSluzbi();
+    }
+    protected void gvSektor_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvSektor.EditIndex = -1;
+        gvSektor.DataSource = ds;
+        gvSektor.DataBind();
+    }
+    protected void gvSektor_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+
+        GridViewRow row = (GridViewRow)gvSektor.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM SEKTOR WHERE ID_Sektor= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniSektori();
+    }
+    protected void gvSektor_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        DataSet ds = (DataSet)ViewState["dataset"];
+        gvSektor.EditIndex = e.NewEditIndex;
+        gvSektor.DataSource = ds;
+        gvSektor.DataBind();
+    }
+    protected void gvSektor_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+        string sqlString = "UPDATE SEKTOR SET Sektor=@Sektor WHERE ID_Sektor=@ID_Sektor";
+
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+
+        TextBox tb = (TextBox)gvSektor.Rows[e.RowIndex].Cells[1].Controls[0];
+        komanda.Parameters.AddWithValue("@Sektor", tb.Text);
+
+        komanda.Parameters.AddWithValue("@ID_Sektor", gvSektor.Rows[e.RowIndex].Cells[0].Text);
+
+        int efekt = 0;
+        try
+        {
+            konekcija.Open();
+            efekt = komanda.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            lblPoraka.Text = err.Message;
+        }
+        finally
+        {
+            konekcija.Close();
+            gvSektor.EditIndex = -1;
+        }
+        if (efekt != 0)
+            IspolniSektori();
     }
 }

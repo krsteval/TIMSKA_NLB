@@ -259,6 +259,13 @@
             $("#btnUredi1").hide();
             $("#btnUredi2").hide();
             $("#btnUredi3").hide();
+            $("#btnUredi4").hide();
+            $("#btnUredi5").hide();
+            $("#btnUredi6").hide();
+            $("#btnUredi7").hide();
+            $("#btnUredi8").hide();
+            $("#btnUredi9").hide();
+            $("#btnUredi10").hide();
             
             //$("#btnIzgasiModalen").click(function () {
 
@@ -303,6 +310,13 @@
                 $("#primary9").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
 
             $("#proizvoditel").click(function () {
@@ -340,6 +354,13 @@
                 $("#primary9").hide();
                 $("#btnUredi1").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
 
             $("#model").click(function () {
@@ -376,6 +397,13 @@
                 $("#primary9").hide();
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#dobavuvac").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -411,6 +439,13 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").show();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#status").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -446,6 +481,13 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").show();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#korisnik").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -481,6 +523,13 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").show();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#grad").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -516,6 +565,13 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").show();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#organizaciona").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -551,6 +607,22 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#primary4").hide();
+                $("#primary5").hide();
+                $("#primary6").hide();
+                $("#primary7").hide();
+                $("#primary8").hide();
+                $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").show();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").hide();
             });
             $("#sluzba").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -586,6 +658,13 @@
                 $("#btnUredi1").hide();
                 $("#btnUredi2").hide();
                 $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").show();
+                $("#btnUredi10").hide();
             });
             $("#sektor").click(function () {
                 $("#ddlProizvoditel").hide();
@@ -618,6 +697,16 @@
                 $("#primary7").hide();
                 $("#primary8").hide();
                 $("#primary9").hide();
+                $("#btnUredi1").hide();
+                $("#btnUredi2").hide();
+                $("#btnUredi3").hide();
+                $("#btnUredi4").hide();
+                $("#btnUredi5").hide();
+                $("#btnUredi6").hide();
+                $("#btnUredi7").hide();
+                $("#btnUredi8").hide();
+                $("#btnUredi9").hide();
+                $("#btnUredi10").show();
             });
 
             $("#btnPrikaziDodadi").click(function () {
@@ -855,6 +944,7 @@
 
                 <div class="col-lg-6 col-md-6 portfolio-item">
                      <div style="min-height:20px;padding:19px;margin-bottom:20px;" class="text-center">
+                        
                         <button id="tipOprema" type="button" class="btn btn-hot text-uppercase btn-lg">Тип на опрема</button>
                         <button id="proizvoditel" type="button" class="btn btn-sunny text-uppercase btn-lg">Производител</button>
                         <button id="model" type="button" class="btn btn-fresh text-uppercase btn-lg">Модел</button>
@@ -896,6 +986,14 @@
                                 <asp:Button ID="btnUredi1" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi1_Click" />
                                 <asp:Button ID="btnUredi2" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi2_Click" />
                                 <asp:Button ID="btnUredi3" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi3_Click" />
+                                <asp:Button ID="btnUredi4" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi4_Click" />
+                                <asp:Button ID="btnUredi5" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi5_Click" />
+                                <asp:Button ID="btnUredi6" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi6_Click" />
+                                <asp:Button ID="btnUredi7" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi7_Click" />
+                                <asp:Button ID="btnUredi8" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi8_Click" />
+                                <asp:Button ID="btnUredi9" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi9_Click" />
+                                <asp:Button ID="btnUredi10" class="btn btn-warning" runat="server" style="margin-top: -10px;" Text="Уреди" OnClick="btnUredi10_Click" />
+                                
                                 
                                 <br />
                             </section>
@@ -926,8 +1024,7 @@
                             <asp:Button ID="Button2" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="Button2_Click" />
                             <asp:Button ID="btnIzgasiModalen" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -950,8 +1047,7 @@
                             <asp:Button ID="btnDodadiProzvoditel" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiProzvoditel_Click"  />
                             <asp:Button ID="Button5" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -982,8 +1078,7 @@
                             <asp:Button ID="btnDodadiModel" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiModel_Click"  />
                             <asp:Button ID="Button7" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1006,8 +1101,7 @@
                             <asp:Button ID="btnDodadiDobavuvac" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiDobavuvac_Click" />
                             <asp:Button ID="Button10" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1030,8 +1124,7 @@
                             <asp:Button ID="btnDodadiStatus" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiStatus_Click" />
                             <asp:Button ID="Button11" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1054,8 +1147,7 @@
                             <asp:Button ID="btnDodadiKorisnik" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiKorisnik_Click" />
                             <asp:Button ID="Button14" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1078,8 +1170,7 @@
                             <asp:Button ID="btnDodadiGrad" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiGrad_Click" />
                             <asp:Button ID="Button17" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1101,8 +1192,7 @@
                             <asp:Button ID="btnDodadiOrganizaciona" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiOrganizaciona_Click" />
                             <asp:Button ID="Button16" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1125,8 +1215,7 @@
                             <asp:Button ID="btnDodadiSluzba" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiSluzba_Click" />
                             <asp:Button ID="Button23" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -1149,14 +1238,237 @@
                             <asp:Button ID="btnDodadiSektor" style="float:left;" class="btn btn-success pull-left" runat="server" Text="Додади" OnClick="btnDodadiSektor_Click" />
                             <asp:Button ID="Button20" style="float:right;" class="btn btn-danger pull-right" data-dismiss="modal" runat="server" Text="Откажи"  />
                            
-                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>
-                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
+                             <%--<asp:Button style="float:right;" ID="btnIzgaziProzorec" class="btn btn-default pull-left" data-dismiss="modal" runat="server" Text="Затвори"  />--%>                             <%--<button style="float:right;" type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>--%>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-
-        
+        <div class="container">
+            <div class="row" style="margin-left:50px;">
+                <div id="divTipOprema" runat="server" visible="false">
+                    <asp:GridView ID="gvTipOprema" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvTipOprema_RowCancelingEdit" OnRowDeleting="gvTipOprema_RowDeleting" OnRowEditing="gvTipOprema_RowEditing" OnRowUpdating="gvTipOprema_RowUpdating">
+                        <Columns>
+                            <asp:BoundField DataField="ID_TipOprema" HeaderText="Број" ReadOnly="True" />
+                            <asp:BoundField DataField="TipOprema" HeaderText="Тип Опрема" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divProizvoditel" runat="server" visible="false">
+                    <asp:GridView ID="gvProizvoditel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvProizvoditel_RowCancelingEdit" OnRowDeleting="gvProizvoditel_RowDeleting" OnRowEditing="gvProizvoditel_RowEditing" OnRowUpdating="gvProizvoditel_RowUpdating">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Proizvoditel" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Proizvoditel" HeaderText="Производител" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" InsertText=""
+                                ShowEditButton="True" UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divModel" runat="server" visible="false">
+                    <asp:GridView ID="gvModel" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowCancelingEdit="gvModel_RowCancelingEdit" OnRowDeleting="gvModel_RowDeleting" OnRowEditing="gvModel_RowEditing" OnRowUpdating="gvModel_RowUpdating">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Model" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Model" HeaderText="Модел" />
+                            <asp:CommandField ShowEditButton="True" CancelText="Откажи" EditText="Уреди"
+                                UpdateText="Внеси" />
+                            <asp:CommandField ShowDeleteButton="True" DeleteText="Избриши" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divDobavuvac" runat="server" visible="false">
+                    <asp:GridView ID="gvDobavuvac" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvDobavuvac_RowCancelingEdit"
+                        OnRowDeleting="gvDobavuvac_RowDeleting" OnRowEditing="gvDobavuvac_RowEditing"
+                        OnRowUpdating="gvDobavuvac_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Dobavuvac" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Dobavuvac" HeaderText="Добавувач" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divStatus" runat="server" visible="false">
+                    <asp:GridView ID="gvStatus" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvStatus_RowCancelingEdit"
+                        OnRowDeleting="gvStatus_RowDeleting" OnRowEditing="gvStatus_RowEditing"
+                        OnRowUpdating="gvStatus_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Status" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Status" HeaderText="Статус" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divKorisnik" runat="server" visible="false">
+                    <asp:GridView ID="gvKorisnik" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvKorisnik_RowCancelingEdit"
+                        OnRowDeleting="gvKorisnik_RowDeleting" OnRowEditing="gvKorisnik_RowEditing"
+                        OnRowUpdating="gvKorisnik_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Korisnik" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Korisnik" HeaderText="Корисник" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divGrad" runat="server" visible="false">
+                    <asp:GridView ID="gvGrad" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvGrad_RowCancelingEdit" OnRowDeleting="gvGrad_RowDeleting"
+                        OnRowEditing="gvGrad_RowEditing" OnRowUpdating="gvGrad_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Grad" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Grad" HeaderText="Град" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divOrganizacionaEdinica" runat="server" visible="false">
+                    <asp:GridView ID="gvOrganizacionaEdinica" runat="server"
+                        AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvOrganizacionaEdinica_RowCancelingEdit"
+                        OnRowDeleting="gvOrganizacionaEdinica_RowDeleting"
+                        OnRowEditing="gvOrganizacionaEdinica_RowEditing"
+                        OnRowUpdating="gvOrganizacionaEdinica_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Edinica" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="OrganizacionaEdinica" HeaderText="Орг. Единица" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divSluzba" runat="server" visible="false">
+                    <asp:GridView ID="gvSluzba" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvSluzba_RowCancelingEdit"
+                        OnRowDeleting="gvSluzba_RowDeleting" OnRowEditing="gvSluzba_RowEditing"
+                        OnRowUpdating="gvSluzba_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Sluzba" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Sluzba" HeaderText="Служба" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+                <div id="divSektor" runat="server" visible="false">
+                    <asp:GridView ID="gvSektor" runat="server" AutoGenerateColumns="False"
+                        OnRowCancelingEdit="gvSektor_RowCancelingEdit"
+                        OnRowDeleting="gvSektor_RowDeleting" OnRowEditing="gvSektor_RowEditing"
+                        OnRowUpdating="gvSektor_RowUpdating" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                        <Columns>
+                            <asp:BoundField DataField="ID_Sektor" HeaderText="ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Sektor" HeaderText="Сектор" />
+                            <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True"
+                                UpdateText="Внеси" />
+                            <asp:CommandField DeleteText="Избриши" ShowDeleteButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" ForeColor="#003399" />
+                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                    </asp:GridView>
+                </div>
+            </div>
+            </div>
 
         <asp:Label ID="lblPoraka" runat="server" Text=" "></asp:Label>
     </form>
