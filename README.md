@@ -105,7 +105,9 @@
 <img src="http://i.imgur.com/IIQBq5u.png" alt="Start Screen"/><br />
 <img src="http://i.imgur.com/JwyJYKP.png" alt="Start Screen"/><br />
 <img src="http://i.imgur.com/Dt7Dcu0.png" alt="Start Screen"/><br />
+	За секој од шифрарниците со клик на копчето Уреди, се прикажуваат податоци од предифинираниот тип кој сте го избрале, и за нив е овозможена опција за едитирање, како и бришене на секој елемент.
 
+<img src="http://i.imgur.com/f9ZVMSd.png" alt="Start Screen"/><br />
 - - -
 <b>1.5.	Историјат на промените</b><br />
 
