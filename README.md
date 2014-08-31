@@ -103,7 +103,7 @@
 
 
 <img src="http://i.imgur.com/IIQBq5u.png" alt="Start Screen"/><br />
-<img src="http://i.imgur.com/vMsRoOA.png" alt="Start Screen"/><br />
+<img src="http://i.imgur.com/JwyJYKP.png" alt="Start Screen"/><br />
 <img src="http://i.imgur.com/Dt7Dcu0.png" alt="Start Screen"/><br />
 
 - - -
