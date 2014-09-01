@@ -222,13 +222,13 @@
                 </div>            
             </div>
             </div>
-            <div style="padding: 5px; margin-left: 10px; margin-top: 70px;" class="col-lg-12">
+            <div style="padding: 5px; margin-left: 5px; margin-top: 70px;" class="col-lg-12">
                 <asp:TextBox ID="txtPrebaraj" runat="server"></asp:TextBox>
                 <asp:Button ID="btnPrebaraj" style=" border-radius: 5px; margin-top: -10px;" class="btn-success" runat="server" OnClick="btnPrebaraj_Click" Text="Пребарај" />
                 <asp:Button ID="bntAdvancedSearch" style="border-radius: 5px; margin-top: -10px;" class="btn btn-fresh" runat="server" Text="+" OnClick="btnAdvancedSearch_Click" />
             </div>
 
-            <div id="advancedSearch" style="border:1px solid black; border-radius:3px;float:left; width:250px; margin-left:10px; padding: 10px 0px 10px 10px;" runat="server" visible="False">
+            <div id="advancedSearch" style="border:1px solid black; border-radius:3px; width:250px; margin-left:10px; padding: 10px 0px 10px 10px;float:left;" runat="server" visible="false">
                 
                 <label for="tip_oprema">Тип на Опрема</label>
                 <asp:CheckBox ID="checkTipOprema" runat="server" />
@@ -288,7 +288,8 @@
                 <asp:DropDownList ID="asSektor" runat="server" DataSourceID="SqlDataSource6" DataTextField="Sektor" DataValueField="Sektor"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sektor] FROM [SEKTOR]"></asp:SqlDataSource>
 
-                <asp:Button ID="btnNaprednoPrebaruvanje" runat="server"  style="border-radius:5px;margin-left:35px;" class="btn-success" Text="Напредно Пребарување" OnClick="btnNaprednoPrebaruvanje_Click" ToolTip="Мора да селектирате барем едно!" />
+                <asp:Button ID="btnNaprednoPrebaruvanje" runat="server"  style="border-radius:5px;" class="btn-success" Text="Напредно Пребарување" OnClick="btnNaprednoPrebaruvanje_Click" ToolTip="Мора да селектирате барем едно!" />
+                <asp:Button ID="btnZatvoriNapredno" runat="server" style="display:inline;border-radius:5px;" class="btn-danger" Text="Откажи" OnClick="btnZatvoriNapredno_Click"/>
             </div>
             
         <br />

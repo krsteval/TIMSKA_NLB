@@ -1430,6 +1430,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniSifrarnici();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi2_Click(object sender, EventArgs e)
     {
@@ -1445,6 +1446,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniSifrarnici1();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi3_Click(object sender, EventArgs e)
     {
@@ -1459,6 +1461,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniSifrarnici2();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi4_Click(object sender, EventArgs e)
     {
@@ -1473,6 +1476,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniDobavuvaci();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi5_Click(object sender, EventArgs e)
     {
@@ -1487,6 +1491,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniStatusi();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi6_Click(object sender, EventArgs e)
     {
@@ -1501,6 +1506,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniKorisnici();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi7_Click(object sender, EventArgs e)
     {
@@ -1515,6 +1521,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniGradovi();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi8_Click(object sender, EventArgs e)
     {
@@ -1529,6 +1536,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = false;
         IspolniOrganizaciona();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi9_Click(object sender, EventArgs e)
     {
@@ -1543,6 +1551,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = true;
         divSektor.Visible = false;
         IspolniSluzbi();
+        btnZatvoriPregled.Visible = true;
     }
     protected void btnUredi10_Click(object sender, EventArgs e)
     {
@@ -1557,6 +1566,7 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         divSluzba.Visible = false;
         divSektor.Visible = true;
         IspolniSektori();
+        btnZatvoriPregled.Visible = true;
     }
     protected void gvDobavuvac_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
@@ -1689,10 +1699,35 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         gvKorisnik.DataSource = ds;
         gvKorisnik.DataBind();
     }
+
+
+
+
+    // DA SE DOPISE OVAA FUNKCIJA
     protected void gvKorisnik_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
 
+        GridViewRow row = (GridViewRow)gvKorisnik.Rows[e.RowIndex];
+
+        konekcija.Open();
+        string x = row.Cells[0].Text;
+        lblPoraka.Text = "Успешно избришан " + row.Cells[1].Text;
+
+        SqlCommand komanda = new SqlCommand("DELETE FROM KORISNIK WHERE ID_Korisnik= '" + x + "'", konekcija);
+
+        komanda.ExecuteNonQuery();
+        konekcija.Close();
+        IspolniKorisnici();
     }
+
+
+
+
+
+
+
     protected void gvKorisnik_RowEditing(object sender, GridViewEditEventArgs e)
     {
         DataSet ds = (DataSet)ViewState["dataset"];
@@ -1979,5 +2014,19 @@ public partial class TimskaRabota_Sifrarnici : System.Web.UI.Page
         }
         if (efekt != 0)
             IspolniSektori();
+    }
+    protected void btnZatvoriPregled_Click(object sender, EventArgs e)
+    {
+        divTipOprema.Visible = false;
+        divProizvoditel.Visible = false;
+        divModel.Visible = false;
+        divDobavuvac.Visible = false;
+        divStatus.Visible = false;
+        divKorisnik.Visible = false;
+        divGrad.Visible = false;
+        divOrganizacionaEdinica.Visible = false;
+        divSluzba.Visible = false;
+        divSektor.Visible = false;
+        btnZatvoriPregled.Visible = false;
     }
 }

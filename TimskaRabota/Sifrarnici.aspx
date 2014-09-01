@@ -1469,8 +1469,12 @@
                 </div>
             </div>
             </div>
+        
+            <asp:Label ID="lblPoraka" runat="server" Text=" "></asp:Label>
+            <div>
+                <asp:Button ID="btnZatvoriPregled" runat="server" style="margin-left:140px;margin-top:20px;" class="btn btn-danger" Text="Затвори Преглед" OnClick="btnZatvoriPregled_Click" Visible="False" />
+            </div>
 
-        <asp:Label ID="lblPoraka" runat="server" Text=" "></asp:Label>
     </form>
 </body>
 </html>

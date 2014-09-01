@@ -403,5 +403,9 @@ public partial class Pocetna : System.Web.UI.Page
         btnVrati.Visible = false;
         
     }
+    protected void btnZatvoriNapredno_Click(object sender, EventArgs e)
+    {
+        advancedSearch.Visible = false;
+    }
 
 }

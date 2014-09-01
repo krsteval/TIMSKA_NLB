@@ -684,10 +684,8 @@ public partial class Promena : System.Web.UI.Page
         }
 
         string konecen="";
-        if (prebarano != " ")
-        {
-            konecen = prebarano.Substring(0, prebarano.Length - 4);
-        }
+        konecen = prebarano.Substring(0, prebarano.Length - 4);
+        
 
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
@@ -718,7 +716,10 @@ public partial class Promena : System.Web.UI.Page
         btnVrati.Visible = true;
 
     }
-
+    protected void btnZatvoriNapredno_Click(object sender, EventArgs e)
+    {
+        advancedSearch.Visible = false;
+    }
 
    
 }

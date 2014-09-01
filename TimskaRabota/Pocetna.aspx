@@ -151,7 +151,7 @@
             </div>
 
             <div id="wrapper" style="width:auto;margin-top: 70px;"> 
-		                  <div style="margin-left:90px;">
+		                  <div style="margin-left:10px;">
 				                <asp:TextBox ID="txtPrebaraj" runat="server"></asp:TextBox>
                                 <asp:Button ID="btnPrebaraj" style="border-radius:5px;margin-top:-10px;" class="btn-success"  runat="server" onclick="btnPrebaraj_Click" 
                                     Text="Пребарај" />
@@ -220,7 +220,8 @@
                 <asp:DropDownList ID="asSektor" runat="server" DataSourceID="SqlDataSource16" DataTextField="Sektor" DataValueField="Sektor"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:AleksandarConnectionString %>" SelectCommand="SELECT [Sektor] FROM [SEKTOR]"></asp:SqlDataSource>
 
-                <asp:Button ID="btnNaprednoPrebaruvanje" runat="server"  style="border-radius:5px;margin-left:35px;" class="btn-success" Text="Напредно Пребарување" OnClick="btnNaprednoPrebaruvanje_Click" ToolTip="Мора да селектирате барем едно!" />
+                <asp:Button ID="btnNaprednoPrebaruvanje" runat="server"  style="border-radius:5px;" class="btn-success" Text="Напредно Пребарување" OnClick="btnNaprednoPrebaruvanje_Click" ToolTip="Мора да селектирате барем едно!" />
+                <asp:Button ID="btnZatvoriNapredno" runat="server" style="display:inline;border-radius:5px;" class="btn-danger" Text="Откажи" OnClick="btnZatvoriNapredno_Click"/>
             </div>
 
 
